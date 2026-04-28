@@ -4,7 +4,7 @@ const dictionaries: any = {
 };
 
 export const getDictionary = async (locale: string) => {
-  // Si locale no es 'es' ni 'en', que use 'es' por defecto para no dar error
-  const selectedLocale = dictionaries[locale] ? locale : 'es';
-  return dictionaries[selectedLocale]();
+  // Si el locale no existe en nuestro objeto, usamos 'es' por defecto
+  const fn = dictionaries[locale] || dictionaries['es'];
+  return fn();
 };
