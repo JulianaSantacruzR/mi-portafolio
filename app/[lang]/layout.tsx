@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "../globals.css"; // ✅ Cambio 1: Subimos un nivel para encontrar el CSS
+import "../globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,21 +13,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Juliana Santacruz | Portafolio", // ✅ Cambio 2: Personalizamos tu título
+  title: "Juliana Santacruz | Portafolio",
   description: "Ingeniera de Sistemas especializada en Análisis de Datos y ML",
 };
 
-export default function RootLayout({
+// CAMBIO 1: Agregamos 'async' a la función
+export default async function RootLayout({
   children,
-  params, // ✅ Cambio 3: Recibimos los parámetros de la URL
+  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { lang: string }; // Definimos que params trae el idioma
+  params: Promise<{ lang: string }>; // ✅ CAMBIO 2: params ahora es una Promise
 }>) {
+  // CAMBIO 2: Esperamos (await) a que los parámetros se resuelvan
+  const { lang } = await params;
+
   return (
-    // ✅ Cambio 4: El lang ahora es dinámico (es o en)
     <html
-      lang={params.lang} 
+      lang={lang} // Usamos la variable extraída con await
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
