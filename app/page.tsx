@@ -1,132 +1,77 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Mail, ExternalLink, ChevronRight, GraduationCap, Award } from 'lucide-react'
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ContactForm } from "@/components/contact-form"
-import { Navbar } from "@/components/navbar"
-import { ScrollIndicator } from "@/components/scroll-indicator"
-import { SmoothScroll } from "@/components/smooth-scroll"
-import { HeroSection } from "@/components/hero-section"
-import { 
-  AnimatedSection, 
-  AnimatedCard, 
-  ParticleBackground, 
-  AnimatedGradientBackground 
-} from "@/components/client-animations"
+import Image from 'next/image';
+import { Mail, Download, ExternalLink } from 'lucide-react'; // Instala lucide-react si no lo tienes
 
-export default function Home() {
+export default function Hero() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950">
-      <AnimatedGradientBackground />
-      <ParticleBackground />
-      <ScrollIndicator />
-      <SmoothScroll />
-      <Navbar />
-      <HeroSection />
+    <section className="min-h-screen bg-white flex flex-col items-center px-6 py-12 md:px-24">
+      {/* Navbar Simple */}
+      <nav className="w-full max-w-7xl flex justify-between items-center mb-20">
+        <h2 className="text-xl font-bold text-indigo-600">Juliana Santacruz</h2>
+        <div className="hidden md:flex gap-8 text-gray-700 font-medium">
+          <a href="#sobre-mi">Sobre Mi</a>
+          <a href="#experiencia">Experiencia</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#habilidades">Habilidades</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+        <button className="border border-gray-300 px-4 py-2 rounded-lg text-sm flex items-center gap-2 hover:bg-gray-50 transition">
+          Download Resume <span className="rotate-0 text-xs">☀️</span>
+        </button>
+      </nav>
 
-      {/* About Section */}
-      <section id="about" className="py-20 px-4 bg-white/50 dark:bg-gray-800/50 backdrop-blur-md relative overflow-hidden">
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <AnimatedSection>
-            <h2 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">
-              Sobre Mí
-            </h2>
-          </AnimatedSection>
+      {/* Hero Content */}
+      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        {/* Texto */}
+        <div className="space-y-6">
+          <div className="space-y-2">
+            <h1 className="text-5xl font-extrabold text-gray-900 leading-tight">
+              Juliana Santacruz <br />
+              <span className="text-gray-800">Restrepo</span>
+            </h1>
+            <h3 className="text-2xl font-semibold text-indigo-600">
+              Ingeniera de Sistemas
+            </h3>
+          </div>
+          
+          <p className="text-gray-600 text-lg max-w-lg leading-relaxed">
+            Especializada en análisis de datos, machine learning y ciencia de datos 
+            con experiencia en Google Cloud Platform y visualización de datos.
+          </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <AnimatedSection direction="left" delay={0.2}>
-              <div className="space-y-6">
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                  Soy **Data Analyst Junior** con formación en Ingeniería de Sistemas y Maestría en Ciencia de Datos. Mi enfoque principal es transformar datos brutos en decisiones estratégicas.
-                </p>
-                <div className="flex gap-4">
-                   <Badge className="bg-purple-600">Python</Badge>
-                   <Badge className="bg-blue-600">SQL</Badge>
-                   <Badge className="bg-green-600">GCP</Badge>
-                </div>
-              </div>
-            </AnimatedSection>
+          <div className="flex flex-wrap gap-4">
+            <button className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">
+              Contactar
+            </button>
+            <button className="border border-gray-200 text-gray-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition flex items-center gap-2">
+              Ver Proyectos
+            </button>
+            <button className="bg-gray-100 text-gray-700 p-3 rounded-lg hover:bg-gray-200 transition">
+              <Download size={20} />
+            </button>
+          </div>
 
-            <AnimatedSection direction="right" delay={0.4}>
-              <div className="bg-gray-50 dark:bg-gray-900/50 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-xl">
-                <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-                  <Award className="text-purple-600" /> Experiencia Clave
-                </h3>
-                <ul className="space-y-4">
-                  {[
-                    "Análisis y Visualización (Pandas, Plotly)",
-                    "Machine Learning Predictivo",
-                    "Cloud Data (BigQuery, GCP)",
-                    "Dashboards (Looker Studio, Power BI)"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 group">
-                      <ChevronRight className="w-5 h-5 text-purple-600 group-hover:translate-x-1 transition-transform" />
-                      <span className="text-gray-700 dark:text-gray-300">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </AnimatedSection>
+          <div className="pt-4">
+            <button className="text-gray-500 hover:text-indigo-600 transition border p-2 rounded-md">
+              <Mail size={24} />
+            </button>
           </div>
         </div>
-      </section>
 
-      {/* Projects Section - Optimizado para accesibilidad */}
-      <section id="projects" className="py-20 px-4 relative bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <AnimatedSection>
-            <h2 className="text-3xl font-bold mb-12 text-center">Proyectos Destacados</h2>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Ejemplo de un proyecto con el componente Image corregido */}
-            <AnimatedCard delay={0.2}>
-              <Card className="overflow-hidden border-0 shadow-2xl bg-white dark:bg-gray-800">
-                <div className="relative h-48 w-full bg-gray-200">
-                  <Image 
-                    src="/projects/earth-renewal.jpg" // Asegúrate de que esta ruta exista
-                    alt="Vista previa del asistente agrícola EarthRenewal AI"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover transition-transform hover:scale-105 duration-500"
-                    priority={false}
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle>EarthRenewal AI</CardTitle>
-                  <CardDescription>Chatbot de asistencia agrícola con IA</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Integración de NLP para recomendaciones multilingües en tiempo real para agricultores.
-                  </p>
-                </CardContent>
-                <CardFooter className="flex gap-2">
-                  <Badge variant="secondary">NLP</Badge>
-                  <Badge variant="secondary">Python</Badge>
-                </CardFooter>
-              </Card>
-            </AnimatedCard>
-
-            {/* Agrega más proyectos siguiendo el mismo patrón */}
+        {/* Imagen con Círculo */}
+        <div className="relative flex justify-center items-center">
+          <div className="relative w-80 h-80 md:w-[450px] md:h-[450px]">
+            {/* El borde circular blanco/sombra */}
+            <div className="absolute inset-0 rounded-full border-8 border-white shadow-2xl overflow-hidden">
+              <Image 
+                src="/tu-foto.png" // Asegúrate de poner tu foto en la carpeta public
+                alt="Juliana Santacruz"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 bg-white dark:bg-gray-950">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">¿Hablamos?</h2>
-            <p className="text-gray-600 dark:text-gray-400">Estoy abierto a nuevas oportunidades en el mundo de los datos.</p>
-          </div>
-          <Card className="p-2 md:p-8 border-none shadow-2xl">
-            <ContactForm />
-          </Card>
-        </div>
-      </section>
-    </div>
-  )
+      </div>
+    </section>
+  );
 }
