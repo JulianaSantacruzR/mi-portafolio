@@ -1,8 +1,12 @@
 // src/app/page.tsx
 import Image from 'next/image';
 import { Mail, Download, Search, Sun } from 'lucide-react'; // Importamos los iconos necesarios
+import { getDictionary } from '../dictionaries'; // Importamos el cargador
 
-export default function Home() {
+export default async function Home({ params: { lang } }: { params: { lang: string } }) {
+  // Cargamos el diccionario según el idioma de la URL (/es o /en)
+  const dict = await getDictionary(lang);
+ 
   return (
     <div className="min-h-screen bg-neutral-50 font-sans text-neutral-900">
       
@@ -12,17 +16,18 @@ export default function Home() {
         
         {/* Logo/Nombre - Notar el gradiente sutil */}
         <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-indigo-600">
-          Juliana Santacruz
+          Juliana Santacruz R
         </div>
         
         {/* Enlaces centrales (flex-1 para empujar los extremos) */}
         <div className="flex-1 hidden md:flex items-center justify-center gap-9 text-base font-medium text-neutral-700">
+          {/* Los títulos ahora vienen del diccionario dict.nav */}
           {[
-            ['Sobre Mi', '#about'],
-            ['Experiencia', '#experience'],
-            ['Proyectos', '#projects'],
-            ['Habilidades', '#skills'],
-            ['Contacto', '#contact']
+            [dict.nav.about, '#about'],
+            [dict.nav.experience, '#experience'],
+            [dict.nav.projects, '#projects'],
+            [dict.nav.skills, '#skills'],
+            [dict.nav.contact, '#contact']
           ].map(([title, url]) => (
             <a 
               key={title} 
@@ -39,7 +44,7 @@ export default function Home() {
         {/* Botones derechos (Resume y Modo Claro/Oscuro) */}
         <div className="flex items-center gap-3">
           <button className="text-sm font-semibold flex items-center gap-2 border border-neutral-300 px-5 py-2.5 rounded-full bg-white hover:bg-neutral-100 transition shadow-sm">
-            Download Resume
+            {dict.nav.resume}
             <Download className="w-4 h-4 text-violet-600" />
           </button>
           
@@ -66,14 +71,13 @@ export default function Home() {
             
             {/* Subtítulo en el color principal */}
             <h2 className="text-3xl font-bold text-violet-600">
-              Ingeniera de Sistemas
+              {dict.hero.role}
             </h2>
           </div>
           
           {/* Descripción */}
           <p className="text-xl leading-relaxed text-neutral-600 max-w-2xl">
-            Especializada en análisis de datos, machine learning y ciencia de datos 
-            con experiencia en Google Cloud Platform y visualización de datos.
+            {dict.hero.description}
           </p>
           
           {/* Grupo de Botones de Acción */}
@@ -81,13 +85,13 @@ export default function Home() {
             
             {/* Botón Principal (Primary) */}
             <button className="group text-lg font-semibold bg-violet-600 text-white px-9 py-4 rounded-xl flex items-center gap-3 shadow-lg shadow-violet-200 hover:bg-violet-700 transition duration-300">
-              Contactar
+              {dict.hero.contactBtn}
               <Mail className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             
             {/* Botón Secundario (Outline) */}
             <button className="text-lg font-semibold border border-neutral-300 text-neutral-700 px-9 py-4 rounded-xl flex items-center gap-2.5 hover:bg-neutral-100 transition duration-300">
-              Ver Proyectos
+              {dict.hero.projectsBtn}
               <Search className="w-5 h-5 text-violet-600" />
             </button>
             

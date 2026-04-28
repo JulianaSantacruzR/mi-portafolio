@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "about": "Sobre Mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "contact": "Contacto",
+    "resume": "Descargar CV"
+  },
+  "hero": {
+    "role": "Ingeniera de Sistemas",
+    "description": "Especializada en análisis de datos, machine learning y ciencia de datos...",
+    "contactBtn": "Contactar",
+    "projectsBtn": "Ver Proyectos"
+  }
+}

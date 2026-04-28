@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "about": "About Me",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "resume": "Download CV"
+  },
+  "hero": {
+    "role": "Systems Engineer",
+    "description": "Specialized in data analysis, machine learning, and data science...",
+    "contactBtn": "Contact Me",
+    "projectsBtn": "View Projects"
+  }
+}
