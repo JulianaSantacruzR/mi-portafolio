@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { GitHub, Linkedin, ArrowRight } from "lucide-react"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
+import { ArrowRight } from "lucide-react"
 
 export default function Hero() {
   return (
@@ -49,14 +50,14 @@ export default function Hero() {
             href="https://github.com"
             target="_blank"
           >
-            <GitHub className="transition hover:text-primary" />
+            <FaGithub className="transition hover:text-primary" />
           </Link>
 
           <Link
             href="https://linkedin.com"
             target="_blank"
           >
-            <Linkedin className="transition hover:text-primary" />
+            <FaLinkedin  className="transition hover:text-primary" />
           </Link>
         </div>
       </div>
