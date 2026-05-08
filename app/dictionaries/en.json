@@ -1,16 +1,23 @@
 {
-  "nav": {
-    "about": "About Me",
+  "navbar": {
+    "about": "About",
     "experience": "Experience",
     "projects": "Projects",
     "skills": "Skills",
-    "contact": "Contact",
-    "resume": "Download CV"
+    "education": "Education",
+    "contact": "Contact"
   },
+
   "hero": {
-    "role": "Systems Engineer",
-    "description": "Specialized in data analysis, machine learning, and data science...",
-    "contactBtn": "Contact Me",
-    "projectsBtn": "View Projects"
+    "badge": "Available for new opportunities",
+    "title": "Building AI & Data Solutions",
+    "subtitle": "Systems Engineer specialized in Data Science, Machine Learning, Big Data and Advanced Analytics.",
+    "projects": "View Projects",
+    "resume": "Download Resume"
+  },
+
+  "contact": {
+    "badge": "Contact",
+    "title": "Let’s Build Something Amazing"
   }
 }

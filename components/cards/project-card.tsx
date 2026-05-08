@@ -1,56 +1,55 @@
 import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
+
+import {
+  ArrowUpRight,
+  Download,
+} from "lucide-react"
+
+import Badge from "../ui/badge"
 
 interface Props {
-  title: string
-  description: string
-  technologies: string[]
-  github?: string
-  demo?: string
+  project: any
 }
 
 export default function ProjectCard({
-  title,
-  description,
-  technologies,
-  github,
-  demo,
+  project,
 }: Props) {
   return (
-    <div className="group rounded-3xl border border-border bg-card p-8 transition hover:-translate-y-2 hover:border-primary">
-      <div className="flex items-start justify-between">
-        <h3 className="text-2xl font-semibold">{title}</h3>
+    <div className="glass-card rounded-3xl p-8 transition duration-300 hover:-translate-y-2 hover:border-primary/30">
+      <div className="flex items-center justify-between gap-4">
+        <Badge>
+          Featured Project
+        </Badge>
 
-        <ArrowUpRight className="transition group-hover:translate-x-1 group-hover:-translate-y-1" />
+        <ArrowUpRight />
       </div>
 
-      <p className="mt-5 leading-relaxed text-muted-foreground">
-        {description}
+      <h3 className="mt-6 text-3xl font-black leading-tight">
+        {project.title}
+      </h3>
+
+      <p className="mt-6 leading-relaxed text-muted-foreground">
+        {project.description}
       </p>
 
-      <div className="mt-6 flex flex-wrap gap-2">
-        {technologies.map((tech) => (
-          <span
-            key={tech}
-            className="rounded-full border border-border px-4 py-2 text-xs"
-          >
+      <div className="mt-8 flex flex-wrap gap-3">
+        {project.technologies.map((tech: string) => (
+          <Badge key={tech}>
             {tech}
-          </span>
+          </Badge>
         ))}
       </div>
 
-      <div className="mt-8 flex gap-4">
-        {github && (
-          <Link href={github} className="text-sm text-primary">
-            GitHub
-          </Link>
-        )}
+      <div className="mt-10 flex flex-wrap gap-4">
+        <Link
+          href={project.pdf}
+          target="_blank"
+          className="flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground"
+        >
+          <Download size={18} />
 
-        {demo && (
-          <Link href={demo} className="text-sm text-primary">
-            Live Demo
-          </Link>
-        )}
+          Download Research PDF
+        </Link>
       </div>
     </div>
   )

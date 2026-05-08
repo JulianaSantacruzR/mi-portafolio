@@ -2,48 +2,44 @@ import Image from "next/image"
 
 export default function About() {
   return (
-    <section id="about" className="px-6 py-32">
-      <div className="mx-auto grid max-w-6xl gap-16 md:grid-cols-2">
-        <div className="relative overflow-hidden rounded-3xl border border-border bg-muted/20 p-2">
+    <section
+      id="about"
+      className="section-spacing"
+    >
+      <div className="container-width grid items-center gap-20 lg:grid-cols-2">
+        <div className="relative">
+          <div className="absolute inset-0 rounded-[40px] bg-gradient-to-tr from-violet-500/20 to-cyan-500/20 blur-3xl" />
+
           <Image
-            src="/profile.jpg"
-            alt="Profile"
+            src="/profile.png"
+            alt="Juliana Santacruz"
             width={600}
             height={700}
-            className="rounded-3xl object-cover"
+            className="relative rounded-[40px] border border-white/10 object-cover"
           />
         </div>
 
         <div>
-          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-primary">
+          <p className="text-sm uppercase tracking-[0.3em] text-primary">
             About Me
           </p>
 
-          <h2 className="text-4xl font-bold md:text-5xl">
-            Passionate About Data & AI
+          <h2 className="mt-4 text-5xl font-black leading-tight">
+            Transforming data into intelligent solutions.
           </h2>
 
-          <p className="mt-8 leading-relaxed text-muted-foreground">
-            Soy ingeniera de sistemas con experiencia en ciencia de datos,
-            machine learning, análisis de información y visualización.
-            Me apasiona crear soluciones inteligentes y construir productos
-            modernos utilizando IA y tecnologías escalables.
-          </p>
+          <div className="mt-8 space-y-6 text-lg leading-relaxed text-muted-foreground">
+            <p>
+              Systems Engineer and Data Scientist specialized in AI-driven solutions, Machine Learning and cloud-based analytics.
+            </p>
 
-          <div className="mt-10 grid grid-cols-2 gap-4">
-            <div className="rounded-2xl border border-border bg-card p-5">
-              <h3 className="text-3xl font-bold">3+</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Years Experience
-              </p>
-            </div>
+            <p>
+              Passionate about predictive systems, cybersecurity in connected vehicles and scalable modern architectures.
+            </p>
 
-            <div className="rounded-2xl border border-border bg-card p-5">
-              <h3 className="text-3xl font-bold">10+</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Projects Built
-              </p>
-            </div>
+            <p>
+              Focused on creating impactful technological solutions that combine business intelligence, data and artificial intelligence.
+            </p>
           </div>
         </div>
       </div>

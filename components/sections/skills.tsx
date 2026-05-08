@@ -1,41 +1,44 @@
-const skills = [
-  "Python",
-  "SQL",
-  "Machine Learning",
-  "Power BI",
-  "Docker",
-  "Next.js",
-  "TensorFlow",
-  "Pandas",
-  "Scikit-learn",
-  "PostgreSQL",
-  "LangChain",
-  "LLMs",
-]
+import SkillCard from "../cards/skill-card"
+
+import { skills } from "@/lib/data/skills"
 
 export default function Skills() {
   return (
-    <section className="px-6 py-32">
-      <div className="mx-auto max-w-6xl">
+    <section
+      id="skills"
+      className="section-spacing"
+    >
+      <div className="container-width">
         <div className="mb-16 text-center">
           <p className="text-sm uppercase tracking-[0.3em] text-primary">
             Skills
           </p>
 
-          <h2 className="mt-4 text-4xl font-bold md:text-5xl">
-            Technologies I Work With
+          <h2 className="mt-4 text-5xl font-black">
+            Technical Expertise
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          {skills.map((skill) => (
-            <div
-              key={skill}
-              className="rounded-2xl border border-border bg-card p-6 text-center transition hover:-translate-y-1 hover:border-primary"
-            >
-              {skill}
-            </div>
-          ))}
+        <div className="grid gap-8 md:grid-cols-2">
+          <SkillCard
+            title="AI & Machine Learning"
+            items={skills.ai}
+          />
+
+          <SkillCard
+            title="Cloud & Big Data"
+            items={skills.cloud}
+          />
+
+          <SkillCard
+            title="Programming"
+            items={skills.programming}
+          />
+
+          <SkillCard
+            title="Visualization"
+            items={skills.visualization}
+          />
         </div>
       </div>
     </section>

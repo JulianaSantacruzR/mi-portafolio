@@ -1,39 +1,36 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "../globals.css";
+import type { Metadata } from "next"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import { Inter } from "next/font/google"
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+import "@/app/globals.css"
+
+import Providers from "@/app/providers"
+
+const inter = Inter({
   subsets: ["latin"],
-});
+  variable: "--font-inter",
+})
 
 export const metadata: Metadata = {
-  title: "Juliana Santacruz | Portafolio",
-  description: "Ingeniera de Sistemas especializada en Análisis de Datos y ML",
-};
+  title: "Juliana Santacruz | Data Scientist",
+  description:
+    "AI Engineer & Data Scientist Portfolio",
+}
 
-// CAMBIO 1: Agregamos 'async' a la función
-export default async function RootLayout({
+export default function RootLayout({
   children,
-  params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: Promise<{ lang: string }>; // ✅ CAMBIO 2: params ahora es una Promise
-}>) {
-  // CAMBIO 2: Esperamos (await) a que los parámetros se resuelvan
-  const { lang } = await params;
-
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html
-      lang={lang} // Usamos la variable extraída con await
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html suppressHydrationWarning>
+      <body
+        className={`${inter.variable} font-sans`}
+      >
+        <Providers>
+          {children}
+        </Providers>
+      </body>
     </html>
-  );
+  )
 }

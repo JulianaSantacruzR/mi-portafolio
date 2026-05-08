@@ -6,27 +6,27 @@ interface Props {
   children: React.ReactNode
 }
 
-export default function FadeIn({
+export default function Stagger({
   children,
 }: Props) {
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-        y: 40,
-      }}
+      initial="hidden"
 
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-
-      transition={{
-        duration: 0.6,
-      }}
+      whileInView="visible"
 
       viewport={{
         once: true,
+      }}
+
+      variants={{
+        hidden: {},
+
+        visible: {
+          transition: {
+            staggerChildren: 0.15,
+          },
+        },
       }}
     >
       {children}

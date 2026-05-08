@@ -1,47 +1,93 @@
 @import "tailwindcss";
 
-/* CONEXIÓN CON TAILWIND v4 */
-@theme {
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
 
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
 
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
+  --primary: 262 83% 58%;
+  --primary-foreground: 0 0% 98%;
 
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
 
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
-
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
+  --border: 240 5.9% 90%;
 }
 
-/* BASE STYLES */
-@layer base {
-  * {
-    @apply border-border;
-  }
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
 
-  body {
-    @apply bg-background text-foreground;
-  }
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+
+  --primary: 263 70% 60%;
+  --primary-foreground: 0 0% 98%;
+
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+
+  --border: 240 3.7% 15.9%;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+
+  font-feature-settings: "rlig" 1, "calt" 1;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+section {
+  position: relative;
+}
+
+button,
+a {
+  transition:
+    all 0.3s ease;
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.3);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+}
+
+.section-spacing {
+  @apply py-32 px-6;
+}
+
+.glass-card {
+  @apply border border-white/10 bg-white/5 backdrop-blur-xl;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent;
+}
+
+.container-width {
+  @apply mx-auto max-w-7xl;
 }
