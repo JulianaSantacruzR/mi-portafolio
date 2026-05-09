@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/navbar"
 import Footer from "@/components/layout/footer"
 import BackgroundBlur from "@/components/layout/background-blur"
 import ScrollProgress from "@/components/layout/scroll-progress"
+import ScrollToTop from "@/components/layout/scroll-to-top"
 
 import TechStack from "@/components/sections/tech-stack"
 import CallToAction from "@/components/sections/call-to-action"
@@ -17,7 +18,6 @@ import Certifications from "@/components/sections/certifications"
 import Achievements from "@/components/sections/achievements"
 import Contact from "@/components/sections/contact"
 import Stats from "@/components/sections/stats"
-
 export default async function Home({
   params,
 }: {
@@ -48,6 +48,7 @@ export default async function Home({
       <CallToAction />
       <Contact dictionary={dictionary} />
       <Footer />
+      <ScrollToTop />
     </main>
   )
 }

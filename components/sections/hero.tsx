@@ -55,15 +55,15 @@ export default function Hero({
               <ArrowRight size={18} />
             </Link>
 
-            <Link
-              href="/cv/juliana-santacruz-cv.pdf"
+            <a
+              href="/cv/JulianaSantacruzR_HVDataScientist.pdf"
               download
               className="flex items-center gap-2 rounded-full border border-border bg-background/60 px-8 py-4 text-sm font-semibold backdrop-blur transition hover:bg-muted"
             >
               <Download size={18} />
 
               {dictionary.hero.resume}
-            </Link>
+            </a>
           </div>
 
           <div className="mt-10 flex items-center gap-6 text-muted-foreground">

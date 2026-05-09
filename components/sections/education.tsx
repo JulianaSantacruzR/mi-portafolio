@@ -1,6 +1,26 @@
-import { education } from "@/lib/data/education"
+const education = [
+  {
+    degree:
+      "Master in Data Science",
 
-import Badge from "../ui/badge"
+    institution:
+      "CEUPE",
+
+    period:
+      "2024 - 2025",
+  },
+
+  {
+    degree:
+      "Systems Engineering",
+
+    institution:
+      "University Degree",
+
+    period:
+      "Completed",
+  },
+]
 
 export default function Education() {
   return (
@@ -19,30 +39,22 @@ export default function Education() {
           </h2>
         </div>
 
-        <div className="space-y-8">
+        <div className="grid gap-8 md:grid-cols-2">
           {education.map((item) => (
             <div
               key={item.degree}
-              className="glass-card rounded-3xl p-8"
+              className="glass-card rounded-[32px] p-8 transition duration-300 hover:-translate-y-2 hover:border-primary/30"
             >
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div>
-                  <h3 className="text-2xl font-bold">
-                    {item.degree}
-                  </h3>
+              <h3 className="text-3xl font-black leading-tight">
+                {item.degree}
+              </h3>
 
-                  <p className="mt-2 text-primary">
-                    {item.institution}
-                  </p>
-                </div>
+              <p className="mt-4 text-primary">
+                {item.institution}
+              </p>
 
-                <Badge>
-                  {item.period}
-                </Badge>
-              </div>
-
-              <p className="mt-6 leading-relaxed text-muted-foreground">
-                {item.description}
+              <p className="mt-6 text-muted-foreground">
+                {item.period}
               </p>
             </div>
           ))}

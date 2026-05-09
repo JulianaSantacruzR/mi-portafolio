@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="container-width flex flex-col items-center justify-between gap-6 px-6 md:flex-row">
         <div>
           <h3 className="text-xl font-black">
-            Juliana.
+            Juliana Santacruz R.
           </h3>
 
           <p className="mt-2 text-sm text-muted-foreground">

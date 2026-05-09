@@ -1,6 +1,59 @@
-import SkillCard from "../cards/skill-card"
+import Badge from "../ui/badge"
 
-import { skills } from "@/lib/data/skills"
+const skillGroups = [
+  {
+    category:
+      "Data Science",
+
+    skills: [
+      "Python",
+      "Machine Learning",
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "TensorFlow",
+    ],
+  },
+
+  {
+    category:
+      "Data Analytics",
+
+    skills: [
+      "Power BI",
+      "SQL",
+      "Data Visualization",
+      "EDA",
+      "Statistics",
+    ],
+  },
+
+  {
+    category:
+      "Cloud & Big Data",
+
+    skills: [
+      "Docker",
+      "BigQuery",
+      "PySpark",
+      "MongoDB",
+      "PostgreSQL",
+    ],
+  },
+
+  {
+    category:
+      "Development",
+
+    skills: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "TailwindCSS",
+      "Git",
+    ],
+  },
+]
 
 export default function Skills() {
   return (
@@ -15,30 +68,31 @@ export default function Skills() {
           </p>
 
           <h2 className="mt-4 text-5xl font-black">
-            Technical Expertise
+            Technologies & Tools
           </h2>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          <SkillCard
-            title="AI & Machine Learning"
-            items={skills.ai}
-          />
+          {skillGroups.map((group) => (
+            <div
+              key={group.category}
+              className="glass-card rounded-[32px] p-8 transition duration-300 hover:-translate-y-2 hover:border-primary/30"
+            >
+              <h3 className="text-2xl font-black">
+                {group.category}
+              </h3>
 
-          <SkillCard
-            title="Cloud & Big Data"
-            items={skills.cloud}
-          />
-
-          <SkillCard
-            title="Programming"
-            items={skills.programming}
-          />
-
-          <SkillCard
-            title="Visualization"
-            items={skills.visualization}
-          />
+              <div className="mt-8 flex flex-wrap gap-3">
+                {group.skills.map(
+                  (skill) => (
+                    <Badge key={skill}>
+                      {skill}
+                    </Badge>
+                  )
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

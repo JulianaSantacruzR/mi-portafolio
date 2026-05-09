@@ -11,27 +11,39 @@ export async function POST(
         service: "gmail",
 
         auth: {
-          user: process.env.EMAIL_USER,
+          user:
+            process.env.EMAIL_USER,
 
-          pass: process.env.EMAIL_PASS,
+          pass:
+            process.env.EMAIL_PASS,
         },
       })
 
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+      from:
+        process.env.EMAIL_USER,
 
-      to: process.env.EMAIL_USER,
+      to:
+        process.env.EMAIL_USER,
 
-      subject: `Portfolio Contact - ${body.name}`,
+      subject: `Portfolio Message from ${body.name}`,
 
       html: `
-        <h2>New Portfolio Message</h2>
+        <h2>New Contact Message</h2>
 
-        <p><strong>Name:</strong> ${body.name}</p>
+        <p>
+          <strong>Name:</strong>
+          ${body.name}
+        </p>
 
-        <p><strong>Email:</strong> ${body.email}</p>
+        <p>
+          <strong>Email:</strong>
+          ${body.email}
+        </p>
 
-        <p><strong>Message:</strong></p>
+        <p>
+          <strong>Message:</strong>
+        </p>
 
         <p>${body.message}</p>
       `,
@@ -41,6 +53,8 @@ export async function POST(
       success: true,
     })
   } catch (error) {
+    console.log(error)
+
     return Response.json(
       {
         success: false,
