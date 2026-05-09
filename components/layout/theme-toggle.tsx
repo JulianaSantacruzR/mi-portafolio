@@ -1,22 +1,59 @@
 "use client"
 
+import { useEffect, useState } from "react"
+
 import { Moon, Sun } from "lucide-react"
 
-import { useTheme } from "next-themes"
-
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] =
+    useState(false)
+
+  const [theme, setTheme] =
+    useState("dark")
+
+  useEffect(() => {
+    setMounted(true)
+
+    const savedTheme =
+      localStorage.getItem("theme")
+
+    if (savedTheme) {
+      setTheme(savedTheme)
+
+      document.documentElement.classList.toggle(
+        "dark",
+        savedTheme === "dark"
+      )
+    }
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
+  function toggleTheme() {
+    const newTheme =
+      theme === "dark"
+        ? "light"
+        : "dark"
+
+    setTheme(newTheme)
+
+    localStorage.setItem(
+      "theme",
+      newTheme
+    )
+
+    document.documentElement.classList.toggle(
+      "dark",
+      newTheme === "dark"
+    )
+  }
 
   return (
     <button
-      onClick={() =>
-        setTheme(
-          theme === "dark"
-            ? "light"
-            : "dark"
-        )
-      }
-      className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur transition hover:bg-muted"
+      onClick={toggleTheme}
+      className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur"
     >
       {theme === "dark" ? (
         <Sun size={18} />

@@ -19,11 +19,11 @@ export default function Contact({
   ) {
     e.preventDefault()
 
+    const form = e.currentTarget
+
     setLoading(true)
 
-    const formData = new FormData(
-      e.currentTarget
-    )
+    const formData = new FormData(form)
 
     const body = {
       name: formData.get("name"),
@@ -55,7 +55,7 @@ export default function Contact({
           "Message sent successfully"
         )
 
-        e.currentTarget.reset()
+        form.reset()
 
         console.log(
           "EMAIL RESPONSE:",

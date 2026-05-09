@@ -51,7 +51,9 @@ export default function Projects() {
               </p>
 
               <div className="mt-10 flex flex-wrap gap-4">
+              {/*  
                 {project.pdf !== "#" && (
+                  
                   <a
                     href={
                       typeof window !== "undefined"
@@ -67,7 +69,7 @@ export default function Projects() {
                     View PDF
                   </a>
                 )}
-
+*/}
                 <Link
                   href="#contact"
                   className="flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold"

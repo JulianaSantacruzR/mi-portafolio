@@ -21,11 +21,6 @@ interface Props {
 export default function Hero({
   dictionary,
 }: Props) {
-  const cvUrl =
-    typeof window !== "undefined"
-      ? `${window.location.origin}/cv/juliana-santacruz-cv.pdf`
-      : "/cv/juliana-santacruz-cv.pdf"
-
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden px-6">
       <div className="absolute inset-0 -z-10">
@@ -63,7 +58,7 @@ export default function Hero({
             </Link>
 
             <a
-              href={cvUrl}
+              href="/cv/juliana-santacruz-cv.pdf"
               download
               target="_blank"
               rel="noopener noreferrer"
