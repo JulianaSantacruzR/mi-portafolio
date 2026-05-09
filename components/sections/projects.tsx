@@ -53,8 +53,13 @@ export default function Projects() {
               <div className="mt-10 flex flex-wrap gap-4">
                 {project.pdf !== "#" && (
                   <a
-                    href={project.pdf}
+                    href={
+                      typeof window !== "undefined"
+                        ? `${window.location.origin}${project.pdf}`
+                        : project.pdf
+                    }
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground"
                   >
                     <FileText size={18} />
