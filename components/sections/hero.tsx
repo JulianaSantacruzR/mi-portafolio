@@ -56,7 +56,7 @@ export default function Hero({
             </Link>
 
             <a
-              href="/cv/JulianaSantacruzR_HVDataScientist.pdf"
+              href="/cv/julianasantacruzr_hvdatascientist.pdf"
               download
               className="flex items-center gap-2 rounded-full border border-border bg-background/60 px-8 py-4 text-sm font-semibold backdrop-blur transition hover:bg-muted"
             >
