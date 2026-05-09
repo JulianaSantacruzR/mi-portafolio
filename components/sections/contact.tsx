@@ -1,126 +1,77 @@
-"use client"
+import nodemailer from "nodemailer"
 
-import { useState } from "react"
+export async function POST(
+  req: Request
+) {
+  try {
+    const body = await req.json()
 
-import toast from "react-hot-toast"
+    console.log("BODY:", body)
 
-interface Props {
-  dictionary?: any
-}
+    const transporter =
+      nodemailer.createTransport({
+        service: "gmail",
 
-export default function Contact({
-  dictionary,
-}: Props) {
-  const [loading, setLoading] = useState(false)
+        auth: {
+          user:
+            process.env.EMAIL_USER,
 
-  async function handleSubmit(
-    e: React.FormEvent<HTMLFormElement>
-  ) {
-    e.preventDefault()
+          pass:
+            process.env.EMAIL_PASS,
+        },
+      })
 
-    setLoading(true)
+    await transporter.sendMail({
+      from:
+        process.env.EMAIL_USER,
 
-    const formData = new FormData(
-      e.currentTarget
-    )
+      to:
+        process.env.EMAIL_USER,
 
-    const body = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      message: formData.get("message"),
-    }
+      subject: `Portfolio Message from ${body.name}`,
 
-    try {
-      const response = await fetch("/api/contact", {
-      method: "POST",
+      html: `
+        <h2>New Contact Message</h2>
 
-      headers: {
-        "Content-Type":
-          "application/json",
-      },
+        <p>
+          <strong>Name:</strong>
+          ${body.name}
+        </p>
 
-      body: JSON.stringify(body),
+        <p>
+          <strong>Email:</strong>
+          ${body.email}
+        </p>
+
+        <p>
+          <strong>Message:</strong>
+        </p>
+
+        <p>${body.message}</p>
+      `,
     })
 
-      if (response.ok) {
-        toast.success(
-          "Message sent successfully"
-        )
+    console.log("EMAIL SENT SUCCESSFULLY")
 
-        e.currentTarget.reset()
-      } else {
-        toast.error(
-          "Something went wrong"
-        )
+    return Response.json({
+      success: true,
+    })
+  } catch (error: any) {
+    console.error(
+      "EMAIL ERROR:",
+      error
+    )
+
+    return Response.json(
+      {
+        success: false,
+        error:
+          error?.message ||
+          "Unknown error",
+      },
+      {
+        status: 500,
       }
-    } catch (error) {
-      toast.error(
-        "Something went wrong"
-      )
-    }
-
-    setLoading(false)
+    )
   }
-
-  return (
-    <section
-      id="contact"
-      className="section-spacing"
-    >
-      <div className="container-width max-w-3xl">
-        <div className="mb-16 text-center">
-          <p className="text-sm uppercase tracking-[0.3em] text-primary">
-            {dictionary?.contact?.badge ??
-              "Contact"}
-          </p>
-
-          <h2 className="mt-4 text-5xl font-black leading-tight">
-            {dictionary?.contact?.title ??
-              "Let’s Build Something Amazing"}
-          </h2>
-        </div>
-
-        <form
-          onSubmit={handleSubmit}
-          className="glass-card rounded-3xl p-8"
-        >
-          <div className="grid gap-6">
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              required
-              className="rounded-2xl border border-border bg-background/60 px-5 py-4 outline-none transition focus:border-primary"
-            />
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-              className="rounded-2xl border border-border bg-background/60 px-5 py-4 outline-none transition focus:border-primary"
-            />
-
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              rows={6}
-              required
-              className="rounded-2xl border border-border bg-background/60 px-5 py-4 outline-none transition focus:border-primary"
-            />
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="rounded-full bg-primary px-8 py-4 font-semibold text-primary-foreground transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              {loading
-                ? "Sending..."
-                : "Send Message"}
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
-  )
 }
