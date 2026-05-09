@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 
 import FadeIn from "../animations/fade-in"
@@ -19,6 +21,11 @@ interface Props {
 export default function Hero({
   dictionary,
 }: Props) {
+  const cvUrl =
+    typeof window !== "undefined"
+      ? `${window.location.origin}/cv/juliana-santacruz-cv.pdf`
+      : "/cv/juliana-santacruz-cv.pdf"
+
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden px-6">
       <div className="absolute inset-0 -z-10">
@@ -56,8 +63,10 @@ export default function Hero({
             </Link>
 
             <a
-              href="/cv/juliana-santacruzr-hvdatascientist.pdf"
+              href={cvUrl}
               download
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-full border border-border bg-background/60 px-8 py-4 text-sm font-semibold backdrop-blur transition hover:bg-muted"
             >
               <Download size={18} />
