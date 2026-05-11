@@ -11,8 +11,8 @@ export default function Providers({
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="dark"
-      enableSystem
+      defaultTheme="light"
+      enableSystem={false}
     >
       <Toaster position="top-right" />
 

@@ -1,11 +1,8 @@
-import Link from "next/link"
+// projects.tsx
 
 import {
-  // ArrowUpRight,
   FileText,
 } from "lucide-react"
-
-import Badge from "../ui/badge"
 
 import { projects } from "@/lib/data/projects"
 
@@ -21,7 +18,7 @@ export default function Projects() {
             Portfolio
           </p>
 
-          <h2 className="mt-4 text-5xl font-black">
+          <h2 className="mt-4 text-5xl font-black text-zinc-900 dark:text-white">
             Featured Projects
           </h2>
         </div>
@@ -30,62 +27,70 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8 transition hover:-translate-y-1 hover:border-zinc-700"
+              className="
+              rounded-3xl
+              border
+              border-[#dbe2ea]
+              bg-[#edf2f7]
+              p-8
+              shadow-[0_8px_30px_rgba(15,23,42,0.05)]
+              transition
+              duration-300
+              hover:-translate-y-1
+              hover:bg-[#e6edf5]
+              dark:border-zinc-800
+              dark:bg-[#11131a]
+              dark:hover:bg-[#191d27]
+            "
             >
-              {/* CATEGORY */}
               <p className="text-sm uppercase tracking-[0.2em] text-zinc-500">
                 {project.category}
               </p>
 
-              {/* TECHNOLOGIES */}
               <div className="mt-6 flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-full border border-zinc-700 px-4 py-1 text-sm text-zinc-400"
+                    className="
+                    rounded-full
+                    border
+                    border-[#d5dde8]
+                    bg-[#ffffff]
+                    px-4
+                    py-1
+                    text-sm
+                    font-medium
+                    text-zinc-700
+                    dark:border-zinc-700
+                    dark:bg-zinc-800/70
+                    dark:text-zinc-300
+                  "
                   >
                     {tech}
                   </span>
                 ))}
               </div>
 
-              {/* TITLE */}
-              <h3 className="mt-8 text-3xl font-bold">
+              <h3 className="mt-8 text-3xl font-bold text-zinc-900 dark:text-white">
                 {project.title}
               </h3>
 
-              {/* DESCRIPTION */}
-              <p className="mt-6 leading-relaxed text-zinc-400">
+              <p className="mt-6 leading-relaxed text-zinc-600 dark:text-zinc-400">
                 {project.description}
               </p>
 
-              {/* BUTTONS */}
               <div className="mt-10 flex flex-wrap gap-4">
                 {project.pdf !== "#" && (
                   <a
                     href={project.pdf}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 rounded-xl bg-white px-5 py-3 font-semibold text-black"
+                    className="flex items-center gap-2 rounded-xl bg-zinc-900 px-5 py-3 font-semibold text-white transition hover:opacity-90 dark:bg-white dark:text-black"
                   >
                     <FileText size={18} />
-
-                    PDF
+                    View PDF
                   </a>
                 )}
-
-                {/*
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 rounded-xl border border-zinc-700 px-5 py-3 font-semibold"
-                >
-                  GitHub
-
-                  <ArrowUpRight size={18} />
-                </a>
-                */}
               </div>
             </div>
           ))}

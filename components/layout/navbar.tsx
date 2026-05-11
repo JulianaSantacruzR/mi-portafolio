@@ -1,3 +1,5 @@
+// navbar.tsx
+
 "use client"
 
 import Link from "next/link"
@@ -62,90 +64,89 @@ export default function Navbar({
       )
   }, [])
 
+  const navClass = (
+    section: string
+  ) =>
+    active === section
+      ? "text-black dark:text-white"
+      : "text-zinc-600 transition hover:text-black dark:text-zinc-400 dark:hover:text-white"
+
   return (
-    <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-background/70 backdrop-blur-xl">
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-black/5 bg-white/40 backdrop-blur-2xl dark:border-white/5 dark:bg-black/20">
       <div className="container-width flex h-20 items-center justify-between px-6">
         <Link
           href="#"
           className="text-xl font-black tracking-tight"
         >
-          Ingeniera de sistemas
+          Juliana Santacruz
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
           <Link
             href="#about"
-            className={
-              active === "about"
-                ? "text-primary"
-                : ""
-            }
+            className={navClass(
+              "about"
+            )}
           >
             {dictionary.navbar.about}
           </Link>
 
           <Link
             href="#experience"
-            className={
-              active === "experience"
-                ? "text-primary"
-                : ""
-            }
+            className={navClass(
+              "experience"
+            )}
           >
             {dictionary.navbar.experience}
           </Link>
 
           <Link
             href="#projects"
-            className={
-              active === "projects"
-                ? "text-primary"
-                : ""
-            }
+            className={navClass(
+              "projects"
+            )}
           >
             {dictionary.navbar.projects}
           </Link>
 
           <Link
             href="#skills"
-            className={
-              active === "skills"
-                ? "text-primary"
-                : ""
-            }
+            className={navClass(
+              "skills"
+            )}
           >
             {dictionary.navbar.skills}
           </Link>
 
           <Link
             href="#education"
-            className={
-              active === "education"
-                ? "text-primary"
-                : ""
-            }
+            className={navClass(
+              "education"
+            )}
           >
             {dictionary.navbar.education}
           </Link>
 
           <Link
             href="#contact"
-            className={
-              active === "contact"
-                ? "text-primary"
-                : ""
-            }
+            className={navClass(
+              "contact"
+            )}
           >
             {dictionary.navbar.contact}
           </Link>
         </nav>
 
-        <MobileMenu dictionary={dictionary} />
-
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <LanguageSwitcher />
 
           <ThemeToggle />
+
+          <MobileMenu
+            dictionary={
+              dictionary
+            }
+          />
         </div>
       </div>
     </header>

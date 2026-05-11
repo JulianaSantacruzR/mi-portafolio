@@ -1,4 +1,4 @@
-import Badge from "../ui/badge"
+// experience-card.tsx
 
 interface Props {
   item: any
@@ -8,32 +8,82 @@ export default function ExperienceCard({
   item,
 }: Props) {
   return (
-    <div className="glass-card rounded-3xl p-8 transition duration-300 hover:-translate-y-2 hover:border-primary/30">
+    <div
+      className="
+      rounded-3xl
+      border
+      border-[#dbe2ea]
+      bg-[#edf2f7]
+      p-8
+      shadow-[0_8px_30px_rgba(15,23,42,0.05)]
+      transition
+      duration-300
+      hover:-translate-y-2
+      hover:bg-[#e6edf5]
+
+      dark:border-zinc-800
+      dark:bg-[#11131a]
+      dark:hover:border-violet-500/30
+    "
+    >
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h3 className="text-2xl font-bold">
+          <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">
             {item.role}
           </h3>
 
-          <p className="mt-2 text-primary">
+          <p className="mt-2 font-medium text-violet-600 dark:text-violet-400">
             {item.company}
           </p>
         </div>
 
-        <Badge>
+        <span
+          className="
+          rounded-full
+          border
+          border-[#d6dde8]
+          bg-white
+          px-4
+          py-2
+          text-sm
+          font-medium
+          text-zinc-700
+
+          dark:border-zinc-700
+          dark:bg-zinc-800/70
+          dark:text-zinc-300
+        "
+        >
           {item.period}
-        </Badge>
+        </span>
       </div>
 
-      <p className="mt-6 leading-relaxed text-muted-foreground">
+      <p className="mt-6 leading-relaxed text-zinc-600 dark:text-zinc-400">
         {item.description}
       </p>
 
       <div className="mt-6 flex flex-wrap gap-3">
         {item.technologies.map((tech: string) => (
-          <Badge key={tech}>
+          <span
+            key={tech}
+            className="
+            rounded-full
+            border
+            border-[#d6dde8]
+            bg-white
+            px-4
+            py-2
+            text-sm
+            font-medium
+            text-zinc-700
+
+            dark:border-zinc-700
+            dark:bg-zinc-800/70
+            dark:text-zinc-300
+          "
+          >
             {tech}
-          </Badge>
+          </span>
         ))}
       </div>
     </div>

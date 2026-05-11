@@ -1,10 +1,15 @@
+// mobile-menu.tsx
+
 "use client"
 
 import Link from "next/link"
 
-import { useState } from "react"
+import {
+  Menu,
+  X,
+} from "lucide-react"
 
-import { Menu, X } from "lucide-react"
+import { useState } from "react"
 
 interface Props {
   dictionary: any
@@ -16,31 +21,30 @@ export default function MobileMenu({
   const [open, setOpen] =
     useState(false)
 
-  function closeMenu() {
-    setOpen(false)
-  }
-
   return (
-    <div className="md:hidden">
+    <>
       <button
         onClick={() =>
           setOpen(!open)
         }
-        className="relative z-[60] flex h-11 w-11 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900/80 backdrop-blur-xl"
+        className="flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-200 bg-white/70 backdrop-blur-xl md:hidden dark:border-zinc-700 dark:bg-zinc-900/70"
       >
         {open ? (
-          <X size={24} />
+          <X size={20} />
         ) : (
-          <Menu size={24} />
+          <Menu size={20} />
         )}
       </button>
 
       {open && (
-        <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl">
-          <div className="flex h-full flex-col items-center justify-center gap-10 text-3xl font-semibold">
+        <div className="absolute left-6 right-6 top-24 rounded-3xl border border-zinc-200 bg-white/95 p-6 shadow-2xl backdrop-blur-2xl md:hidden dark:border-zinc-800 dark:bg-zinc-950/95">
+          <nav className="flex flex-col gap-6 text-lg font-medium">
             <Link
               href="#about"
-              onClick={closeMenu}
+              onClick={() =>
+                setOpen(false)
+              }
+              className="text-zinc-700 transition hover:text-black dark:text-zinc-300 dark:hover:text-white"
             >
               {
                 dictionary.navbar
@@ -50,7 +54,10 @@ export default function MobileMenu({
 
             <Link
               href="#experience"
-              onClick={closeMenu}
+              onClick={() =>
+                setOpen(false)
+              }
+              className="text-zinc-700 transition hover:text-black dark:text-zinc-300 dark:hover:text-white"
             >
               {
                 dictionary.navbar
@@ -60,7 +67,10 @@ export default function MobileMenu({
 
             <Link
               href="#projects"
-              onClick={closeMenu}
+              onClick={() =>
+                setOpen(false)
+              }
+              className="text-zinc-700 transition hover:text-black dark:text-zinc-300 dark:hover:text-white"
             >
               {
                 dictionary.navbar
@@ -70,7 +80,10 @@ export default function MobileMenu({
 
             <Link
               href="#skills"
-              onClick={closeMenu}
+              onClick={() =>
+                setOpen(false)
+              }
+              className="text-zinc-700 transition hover:text-black dark:text-zinc-300 dark:hover:text-white"
             >
               {
                 dictionary.navbar
@@ -80,7 +93,10 @@ export default function MobileMenu({
 
             <Link
               href="#education"
-              onClick={closeMenu}
+              onClick={() =>
+                setOpen(false)
+              }
+              className="text-zinc-700 transition hover:text-black dark:text-zinc-300 dark:hover:text-white"
             >
               {
                 dictionary.navbar
@@ -90,16 +106,19 @@ export default function MobileMenu({
 
             <Link
               href="#contact"
-              onClick={closeMenu}
+              onClick={() =>
+                setOpen(false)
+              }
+              className="text-zinc-700 transition hover:text-black dark:text-zinc-300 dark:hover:text-white"
             >
               {
                 dictionary.navbar
                   .contact
               }
             </Link>
-          </div>
+          </nav>
         </div>
       )}
-    </div>
+    </>
   )
 }
