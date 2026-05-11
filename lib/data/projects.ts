@@ -3,6 +3,8 @@ export const projects = [
     title:
       "Cyberattack Detection in Connected Vehicles",
 
+    category: "Data Science",
+    
     description:
       "Research project focused on detecting spoofing, fuzzing and DoS attacks in connected vehicles using CAN Bus datasets, Machine Learning and anomaly detection techniques.",
 
@@ -15,7 +17,7 @@ export const projects = [
       "Scikit-learn",
     ],
 
-    pdf: "/projects/connected-vehicle-cybersecurity.pdf",
+    pdf: "/projects/riesgodeciberataquesenvehiculosconectados.pdf",
 
     // github:
     //   "https://github.com/tuusuario/proyecto",
@@ -25,6 +27,8 @@ export const projects = [
     title:
       "Diamond Price Prediction",
 
+    category: "Data Science",
+    
     description:
       "Machine learning project for predicting diamond prices using regression models, feature engineering and exploratory data analysis.",
 
@@ -45,6 +49,8 @@ export const projects = [
   {
     title:
       "Customer Churn Prediction",
+    
+    category: "Data Analytics",
 
     description:
       "Predictive analytics solution to identify customer churn patterns using classification models and business intelligence dashboards.",

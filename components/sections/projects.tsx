@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 import {
-  ArrowUpRight,
+  // ArrowUpRight,
   FileText,
 } from "lucide-react"
 
@@ -32,7 +32,13 @@ export default function Projects() {
               key={project.title}
               className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8 transition hover:-translate-y-1 hover:border-zinc-700"
             >
-              <div className="flex flex-wrap gap-2">
+              {/* CATEGORY */}
+              <p className="text-sm uppercase tracking-[0.2em] text-zinc-500">
+                {project.category}
+              </p>
+
+              {/* TECHNOLOGIES */}
+              <div className="mt-6 flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
@@ -43,14 +49,17 @@ export default function Projects() {
                 ))}
               </div>
 
+              {/* TITLE */}
               <h3 className="mt-8 text-3xl font-bold">
                 {project.title}
               </h3>
 
+              {/* DESCRIPTION */}
               <p className="mt-6 leading-relaxed text-zinc-400">
                 {project.description}
               </p>
 
+              {/* BUTTONS */}
               <div className="mt-10 flex flex-wrap gap-4">
                 {project.pdf !== "#" && (
                   <a
@@ -64,7 +73,8 @@ export default function Projects() {
                     PDF
                   </a>
                 )}
-{/*
+
+                {/*
                 <a
                   href={project.github}
                   target="_blank"
@@ -75,8 +85,7 @@ export default function Projects() {
 
                   <ArrowUpRight size={18} />
                 </a>
-              */}
-
+                */}
               </div>
             </div>
           ))}

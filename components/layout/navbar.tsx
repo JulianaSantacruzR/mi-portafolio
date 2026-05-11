@@ -69,7 +69,7 @@ export default function Navbar({
           href="#"
           className="text-xl font-black tracking-tight"
         >
-          Juliana.
+          Ingeniera de sistemas
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

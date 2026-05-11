@@ -1,17 +1,45 @@
-const skills = [
-  "Python",
-  "Pandas",
-  "NumPy",
-  "Scikit-learn",
-  "TensorFlow",
-  "SQL",
-  "Power BI",
-  "Docker",
-  "Git",
-  "GitHub",
-  "Vercel",
-  "Machine Learning",
+const skillCategories = [
+  {
+    title: "Data Science",
+
+    skills: [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "TensorFlow",
+      "Machine Learning",
+      "XGBoost",
+    ],
+  },
+
+  {
+    title: "Data Analytics",
+
+    skills: [
+      "SQL",
+      "Power BI",
+      "Excel",
+      "Tableau",
+      "EDA",
+      "Data Visualization",
+    ],
+  },
+
+  {
+    title: "Cloud & Tools",
+
+    skills: [
+      "Docker",
+      "Git",
+      "GitHub",
+      "Vercel",
+      "Jupyter",
+    ],
+  }
+
 ]
+
 
 export default function Skills() {
   return (
@@ -25,16 +53,29 @@ export default function Skills() {
         </p>
 
         <h2 className="mt-4 text-5xl font-black">
-          Technical Stack
+          Technical Skills
         </h2>
 
-        <div className="mt-16 flex flex-wrap gap-4">
-          {skills.map((skill) => (
+        <div className="mt-16 grid gap-8 md:grid-cols-2">
+          {skillCategories.map((category) => (
             <div
-              key={skill}
-              className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-3 text-sm font-medium text-zinc-300"
+              key={category.title}
+              className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8"
             >
-              {skill}
+              <h3 className="text-2xl font-bold">
+                {category.title}
+              </h3>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                {category.skills.map((skill) => (
+                  <div
+                    key={skill}
+                    className="rounded-xl border border-zinc-700 px-4 py-2 text-sm text-zinc-300"
+                  >
+                    {skill}
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>

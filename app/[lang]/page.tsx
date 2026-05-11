@@ -23,7 +23,7 @@ export default async function Home({
     await getDictionary(lang)
 
   return (
-    <main className="min-h-screen bg-[#0b0b0f] text-white">
+    <main className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <Navbar dictionary={dictionary} />
 
       <Hero dictionary={dictionary} />
