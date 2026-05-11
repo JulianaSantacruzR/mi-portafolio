@@ -1,8 +1,11 @@
 // skills.tsx
 
+import SkillCard from "@/components/cards/skill-card"
+
 const skillCategories = [
   {
     title: "Data Science",
+
     skills: [
       "Python",
       "Pandas",
@@ -16,6 +19,7 @@ const skillCategories = [
 
   {
     title: "Data Analytics",
+
     skills: [
       "SQL",
       "Power BI",
@@ -28,6 +32,7 @@ const skillCategories = [
 
   {
     title: "Cloud & Tools",
+
     skills: [
       "Docker",
       "Git",
@@ -45,63 +50,25 @@ export default function Skills() {
       className="px-6 py-32"
     >
       <div className="mx-auto max-w-7xl">
-        <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
-          Skills
-        </p>
+        {/* HEADER */}
+        <div className="mb-16">
+          <p className="text-sm uppercase tracking-[0.3em] text-slate-600 dark:text-zinc-400">
+            Skills
+          </p>
 
-        <h2 className="mt-4 text-5xl font-black text-zinc-900 dark:text-white">
-          Technical Skills
-        </h2>
+          <h2 className="mt-4 text-5xl font-black text-slate-900 dark:text-white">
+            Technical Skills
+          </h2>
+        </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2">
+        {/* CARDS */}
+        <div className="grid gap-8 md:grid-cols-2">
           {skillCategories.map((category) => (
-            <div
+            <SkillCard
               key={category.title}
-              className="
-              rounded-3xl
-              border
-              border-[#dbe2ea]
-              bg-[#edf2f7]
-              p-8
-              shadow-[0_8px_30px_rgba(15,23,42,0.05)]
-              transition
-              duration-300
-              hover:-translate-y-1
-              hover:bg-[#e6edf5]
-              dark:border-zinc-800
-              dark:bg-[#11131a]
-              dark:hover:bg-[#191d27]
-            "
-            >
-              <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">
-                {category.title}
-              </h3>
-
-              <div className="mt-6 flex flex-wrap gap-3">
-                {category.skills.map((skill) => (
-                  <div
-                    key={skill}
-                    className="
-                    rounded-xl
-                    border
-                    border-[#d6dde8]
-                    bg-[#ffffff]
-                    px-4
-                    py-2
-                    text-sm
-                    font-medium
-                    text-zinc-700
-                    shadow-sm
-                    dark:border-zinc-700
-                    dark:bg-zinc-800/60
-                    dark:text-zinc-300
-                  "
-                  >
-                    {skill}
-                  </div>
-                ))}
-              </div>
-            </div>
+              title={category.title}
+              items={category.skills}
+            />
           ))}
         </div>
       </div>

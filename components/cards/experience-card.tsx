@@ -1,5 +1,3 @@
-// experience-card.tsx
-
 interface Props {
   item: any
 }
@@ -12,14 +10,15 @@ export default function ExperienceCard({
       className="
       rounded-3xl
       border
-      border-[#dbe2ea]
-      bg-[#edf2f7]
+      border-zinc-200
+      bg-white/80
       p-8
-      shadow-[0_8px_30px_rgba(15,23,42,0.05)]
+      shadow-[0_8px_30px_rgba(15,23,42,0.06)]
+      backdrop-blur-xl
       transition
       duration-300
       hover:-translate-y-2
-      hover:bg-[#e6edf5]
+      hover:shadow-xl
 
       dark:border-zinc-800
       dark:bg-[#11131a]
@@ -28,7 +27,7 @@ export default function ExperienceCard({
     >
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">
+          <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
             {item.role}
           </h3>
 
@@ -41,13 +40,14 @@ export default function ExperienceCard({
           className="
           rounded-full
           border
-          border-[#d6dde8]
-          bg-white
+          border-violet-200
+          bg-violet-50
           px-4
           py-2
           text-sm
           font-medium
-          text-zinc-700
+          text-violet-700
+          shadow-sm
 
           dark:border-zinc-700
           dark:bg-zinc-800/70
@@ -58,7 +58,7 @@ export default function ExperienceCard({
         </span>
       </div>
 
-      <p className="mt-6 leading-relaxed text-zinc-600 dark:text-zinc-400">
+      <p className="mt-6 leading-relaxed text-slate-700 dark:text-zinc-400">
         {item.description}
       </p>
 
@@ -69,13 +69,14 @@ export default function ExperienceCard({
             className="
             rounded-full
             border
-            border-[#d6dde8]
-            bg-white
+            border-violet-200
+            bg-violet-50
             px-4
             py-2
             text-sm
             font-medium
-            text-zinc-700
+            text-violet-700
+            shadow-sm
 
             dark:border-zinc-700
             dark:bg-zinc-800/70

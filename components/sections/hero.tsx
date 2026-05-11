@@ -1,5 +1,3 @@
-// hero.tsx
-
 "use client"
 
 import Link from "next/link"
@@ -36,17 +34,17 @@ export default function Hero({
         <div className="mx-auto grid w-full max-w-7xl gap-20 lg:grid-cols-2 lg:items-center">
           {/* LEFT SIDE */}
           <div>
-            <div className="w-fit rounded-full border border-[#d8dee8] bg-[#edf2f7] px-5 py-2 text-sm tracking-[0.3em] text-zinc-700 shadow-sm dark:border-zinc-800 dark:bg-[#11131a] dark:text-zinc-400">
+            <div className="w-fit rounded-full border border-violet-200 bg-white/80 px-5 py-2 text-sm tracking-[0.3em] text-slate-700 shadow-sm backdrop-blur-xl dark:border-zinc-800 dark:bg-[#11131a] dark:text-zinc-400">
               Systems Engineer · DATA SCIENTIST
             </div>
 
-            <h1 className="mt-8 text-6xl font-black leading-[0.95] tracking-tight text-zinc-900 md:text-8xl dark:text-white">
+            <h1 className="mt-8 text-6xl font-black leading-[0.95] tracking-tight text-slate-900 md:text-8xl dark:text-white">
               Juliana Santacruz
               <br />
               Restrepo
             </h1>
 
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-zinc-700 dark:text-zinc-400">
+            <p className="mt-8 max-w-xl text-lg leading-relaxed text-slate-700 dark:text-zinc-400">
               Building intelligent systems with Machine Learning,
               Data Analytics and AI-powered applications.
             </p>
@@ -66,7 +64,7 @@ export default function Hero({
               <a
                 href="/cv/juliana-santacruz-cv.pdf"
                 download
-                className="flex items-center gap-2 rounded-xl border border-[#d8dee8] bg-[#edf2f7] px-7 py-4 font-semibold text-zinc-800 shadow-sm transition hover:bg-[#e6edf5] dark:border-zinc-800 dark:bg-[#11131a] dark:text-white dark:hover:bg-[#191d27]"
+                className="flex items-center gap-2 rounded-xl border border-zinc-200 bg-white/80 px-7 py-4 font-semibold text-slate-800 shadow-sm backdrop-blur-xl transition hover:bg-white dark:border-zinc-800 dark:bg-[#11131a] dark:text-white dark:hover:bg-[#191d27]"
               >
                 <Download size={18} />
                 Download CV
@@ -74,7 +72,7 @@ export default function Hero({
 
               <Link
                 href="#projects"
-                className="flex items-center gap-2 rounded-xl border border-[#d8dee8] bg-[#edf2f7] px-7 py-4 font-semibold text-zinc-800 shadow-sm transition hover:bg-[#e6edf5] dark:border-zinc-800 dark:bg-[#11131a] dark:text-white dark:hover:bg-[#191d27]"
+                className="flex items-center gap-2 rounded-xl border border-zinc-200 bg-white/80 px-7 py-4 font-semibold text-slate-800 shadow-sm backdrop-blur-xl transition hover:bg-white dark:border-zinc-800 dark:bg-[#11131a] dark:text-white dark:hover:bg-[#191d27]"
               >
                 Projects
                 <ArrowRight size={18} />
@@ -82,7 +80,7 @@ export default function Hero({
             </div>
 
             {/* SOCIALS */}
-            <div className="mt-10 flex items-center gap-6 text-zinc-600 dark:text-zinc-400">
+            <div className="mt-10 flex items-center gap-6 text-slate-600 dark:text-zinc-400">
               <Link
                 href="https://github.com"
                 target="_blank"
@@ -101,8 +99,8 @@ export default function Hero({
 
           {/* RIGHT SIDE */}
           <div className="relative">
-            <div className="rounded-[32px] border border-[#d8dee8] bg-[#edf2f7] p-10 shadow-[0_10px_30px_rgba(15,23,42,0.06)] transition dark:border-zinc-800 dark:bg-[#11131a]">
-              <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
+            <div className="rounded-[32px] border border-zinc-200 bg-white/80 p-10 shadow-[0_10px_30px_rgba(15,23,42,0.06)] backdrop-blur-xl transition dark:border-zinc-800 dark:bg-[#11131a]">
+              <p className="text-sm uppercase tracking-[0.3em] text-slate-500 dark:text-zinc-500">
                 Certifications & Expertise
               </p>
 
@@ -127,13 +125,13 @@ export default function Hero({
                 ].map((item) => (
                   <div
                     key={item.title}
-                    className="rounded-2xl border border-[#d9e1ea] bg-[#f8fafc] p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:bg-[#f1f5f9] dark:border-zinc-800 dark:bg-[#181b23] dark:hover:bg-[#20242e]"
+                    className="rounded-2xl border border-zinc-200 bg-white/90 p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:bg-white dark:border-zinc-800 dark:bg-[#181b23] dark:hover:bg-[#20242e]"
                   >
-                    <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">
                       {item.title}
                     </h3>
 
-                    <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-zinc-400">
                       {item.desc}
                     </p>
                   </div>

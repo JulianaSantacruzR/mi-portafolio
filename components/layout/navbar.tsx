@@ -1,5 +1,3 @@
-// navbar.tsx
-
 "use client"
 
 import Link from "next/link"
@@ -68,11 +66,11 @@ export default function Navbar({
     section: string
   ) =>
     active === section
-      ? "text-black dark:text-white"
-      : "text-zinc-600 transition hover:text-black dark:text-zinc-400 dark:hover:text-white"
+      ? "text-slate-900 dark:text-white"
+      : "text-slate-700 transition hover:text-slate-900 dark:text-zinc-400 dark:hover:text-white"
 
   return (
-    <header className="fixed left-0 top-0 z-50 w-full border-b border-black/5 bg-white/40 backdrop-blur-2xl dark:border-white/5 dark:bg-black/20">
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-black/5 bg-white/70 shadow-sm backdrop-blur-2xl dark:border-white/5 dark:bg-black/20">
       <div className="container-width flex h-20 items-center justify-between px-6">
         <Link
           href="#"
