@@ -16,6 +16,9 @@ export const projects = [
     ],
 
     pdf: "/projects/connected-vehicle-cybersecurity.pdf",
+
+    // github:
+    //   "https://github.com/tuusuario/proyecto",
   },
 
   {
@@ -34,6 +37,9 @@ export const projects = [
     ],
 
     pdf: "#",
+
+    // github:
+    //   "https://github.com/tuusuario/proyecto",
   },
 
   {
@@ -52,5 +58,8 @@ export const projects = [
     ],
 
     pdf: "#",
+
+    // github:
+    //   "https://github.com/tuusuario/proyecto",
   },
 ]
