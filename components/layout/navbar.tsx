@@ -7,13 +7,24 @@ import ThemeToggle from "./theme-toggle"
 import LanguageSwitcher from "./language-switcher"
 import MobileMenu from "./mobile-menu"
 
-interface Props {
-  dictionary: any
+interface NavbarDictionary {
+  navbar: {
+    badge: string
+    about: string
+    experience: string
+    projects: string
+    skills: string
+    education: string
+    achievements: string
+    contact: string
+  }
 }
 
-export default function Navbar({
-  dictionary,
-}: Props) {
+interface Props {
+  dictionary: NavbarDictionary
+}
+
+export default function Navbar({ dictionary }: Props) {
   const [active, setActive] = useState("")
 
   useEffect(() => {
@@ -62,11 +73,11 @@ export default function Navbar({
   return (
     <header
       className="
-      fixed left-0 top-0 z-50 w-full
-      border-b border-black/5
-      bg-white/70 shadow-sm backdrop-blur-2xl
-      dark:border-white/5 dark:bg-black/20
-    "
+        fixed left-0 top-0 z-50 w-full
+        border-b border-black/5
+        bg-white/70 shadow-sm backdrop-blur-2xl
+        dark:border-white/5 dark:bg-black/20
+      "
     >
       <div className="container-width flex h-20 items-center justify-between px-6">
 
@@ -78,7 +89,6 @@ export default function Navbar({
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
-
           <Link href="#about" className={navClass("about")}>
             {dictionary.navbar.about}
           </Link>
@@ -106,7 +116,6 @@ export default function Navbar({
           <Link href="#contact" className={navClass("contact")}>
             {dictionary.navbar.contact}
           </Link>
-
         </nav>
 
         <div className="flex items-center gap-3">
