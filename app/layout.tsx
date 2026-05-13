@@ -1,4 +1,3 @@
-// @ts-ignore: allow importing global CSS without type declarations
 import "./globals.css"
 
 import { Inter } from "next/font/google"
