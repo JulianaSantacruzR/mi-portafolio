@@ -1,0 +1,24 @@
+// @ts-ignore: allow importing global CSS without type declarations
+import "./globals.css"
+
+import { Inter } from "next/font/google"
+import Providers from "@/app/providers"
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+})
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} font-sans`}>
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  )
+}

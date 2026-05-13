@@ -1,5 +1,3 @@
-// skill-card.tsx
-
 interface Props {
   title: string
   items: string[]
@@ -22,12 +20,12 @@ export default function SkillCard({
       transition
       duration-300
       hover:-translate-y-2
-      hover:bg-[#f1f5f9]
       hover:shadow-xl
 
-      dark:border-zinc-800
-      dark:bg-[#11131a]
-      dark:hover:bg-[#191d27]
+      dark:border-zinc-700
+      dark:bg-[#1a2232]
+      dark:shadow-[0_0_0_1px_rgba(255,255,255,0.05)]
+      dark:hover:bg-[#212c40]
     "
     >
       {/* TITLE */}
@@ -51,16 +49,13 @@ export default function SkillCard({
             font-medium
             text-slate-700
             shadow-sm
-            transition
-            hover:border-violet-300
-            hover:bg-violet-50
-            hover:text-violet-700
 
-            dark:border-zinc-700
-            dark:bg-zinc-800/70
-            dark:text-zinc-300
+            dark:border-zinc-600
+            dark:bg-[#2a3548]
+            dark:text-zinc-200
+
             dark:hover:border-violet-500/40
-            dark:hover:bg-zinc-700
+            dark:hover:bg-[#323f55]
           "
           >
             {item}

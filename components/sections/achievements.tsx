@@ -1,59 +1,46 @@
-const achievements = [
-  {
-    title:
-      "Master Thesis Recognition",
+import CredentialCard from "../cards/achievements-card"
+import { Dictionary } from "@/types/dictionary"
 
-    description:
-      "Research focused on cyberattack detection in connected vehicles using AI and CAN Bus datasets.",
-  },
+interface Props {
+  dictionary: Dictionary
+}
 
-  {
-    title:
-      "International Conferences",
-
-    description:
-      "Participation in academic and technology events related to Data Science and AI.",
-  },
-
-  {
-    title:
-      "Research & Innovation",
-
-    description:
-      "Development of analytical and machine learning solutions focused on real-world business problems.",
-  },
-]
-
-export default function Achievements() {
+export default function Achievements({
+  dictionary,
+}: Props) {
   return (
-    <section className="section-spacing">
-      <div className="container-width">
-        <div className="mb-16 text-center">
-          <p className="text-sm uppercase tracking-[0.3em] text-primary">
-            Achievements
+    <section
+      id="achievements"
+      className="scroll-mt-32 px-6 py-32"
+    >
+      <div className="mx-auto max-w-7xl">
+
+        {/* HEADER */}
+        <div className="mb-16">
+          <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
+            {dictionary.credentials.badge}
           </p>
 
-          <h2 className="mt-4 text-5xl font-black">
-            Highlights & Recognition
+          <h2 className="mt-4 text-5xl font-black text-slate-900 dark:text-white">
+            {dictionary.credentials.title}
           </h2>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
-          {achievements.map((item) => (
-            <div
-              key={item.title}
-              className="glass-card rounded-3xl p-8"
-            >
-              <h3 className="text-2xl font-bold">
-                {item.title}
-              </h3>
+        {/* GRID */}
+        <div className="grid gap-8 lg:grid-cols-2">
 
-              <p className="mt-6 leading-relaxed text-muted-foreground">
-                {item.description}
-              </p>
-            </div>
-          ))}
+          <CredentialCard
+            title={dictionary.credentials.labels.certifications}
+            items={dictionary.credentials.certifications}
+          />
+
+          <CredentialCard
+            title={dictionary.credentials.labels.recognitions}
+            items={dictionary.credentials.recognitions}
+          />
+
         </div>
+
       </div>
     </section>
   )

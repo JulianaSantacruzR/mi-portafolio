@@ -1,5 +1,3 @@
-// mobile-menu.tsx
-
 "use client"
 
 import Link from "next/link"
@@ -47,8 +45,7 @@ export default function MobileMenu({
               className="text-zinc-700 transition hover:text-black dark:text-zinc-300 dark:hover:text-white"
             >
               {
-                dictionary.navbar
-                  .about
+                dictionary.navbar.about
               }
             </Link>
 
@@ -60,8 +57,7 @@ export default function MobileMenu({
               className="text-zinc-700 transition hover:text-black dark:text-zinc-300 dark:hover:text-white"
             >
               {
-                dictionary.navbar
-                  .experience
+                dictionary.navbar.experience
               }
             </Link>
 
@@ -73,8 +69,7 @@ export default function MobileMenu({
               className="text-zinc-700 transition hover:text-black dark:text-zinc-300 dark:hover:text-white"
             >
               {
-                dictionary.navbar
-                  .projects
+                dictionary.navbar.projects
               }
             </Link>
 
@@ -86,8 +81,7 @@ export default function MobileMenu({
               className="text-zinc-700 transition hover:text-black dark:text-zinc-300 dark:hover:text-white"
             >
               {
-                dictionary.navbar
-                  .skills
+                dictionary.navbar.skills
               }
             </Link>
 
@@ -99,11 +93,22 @@ export default function MobileMenu({
               className="text-zinc-700 transition hover:text-black dark:text-zinc-300 dark:hover:text-white"
             >
               {
-                dictionary.navbar
-                  .education
+                dictionary.navbar.education
               }
             </Link>
 
+            <Link
+              href="#achievements"
+              onClick={() =>
+                setOpen(false)
+              }
+              className="text-zinc-700 transition hover:text-black dark:text-zinc-300 dark:hover:text-white"
+            >
+              {
+                dictionary.navbar.achievements
+              }
+            </Link>
+            
             <Link
               href="#contact"
               onClick={() =>
@@ -112,8 +117,7 @@ export default function MobileMenu({
               className="text-zinc-700 transition hover:text-black dark:text-zinc-300 dark:hover:text-white"
             >
               {
-                dictionary.navbar
-                  .contact
+                dictionary.navbar.contact
               }
             </Link>
           </nav>

@@ -15,20 +15,20 @@ export default function Footer() {
           </h3>
 
           <p className="mt-2 text-sm text-slate-600 dark:text-zinc-400">
-            AI Engineer & Data Scientist
+            Systems Engineer & Data Scientist
           </p>
         </div>
 
         <div className="flex items-center gap-5">
           <Link
-            href="https://github.com"
+            href="https://github.com/JulianaSantacruzR?tab=repositories"
             target="_blank"
           >
             <FaGithub className="text-xl transition hover:text-primary" />
           </Link>
 
           <Link
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/juliana-santacruz-restrepo-13060a196/"
             target="_blank"
           >
             <FaLinkedin className="text-xl transition hover:text-primary" />

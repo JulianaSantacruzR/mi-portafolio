@@ -5,19 +5,356 @@
     "projects": "Proyectos",
     "skills": "Habilidades",
     "education": "Educación",
-    "contact": "Contacto"
+    "certifications": "Certificaciones",
+    "contact": "Contacto",
+    "badge": "Juliana Santacruz R.",
+    "achievements": "Logros"
   },
 
   "hero": {
     "badge": "Disponible para nuevas oportunidades",
-    "title": "Construyendo soluciones IA y Data",
-    "subtitle": "Ingeniera de Sistemas especializada en Ciencia de Datos, Machine Learning, Big Data y Analítica Avanzada.",
-    "projects": "Ver Proyectos",
-    "resume": "Descargar CV"
+
+    "title": "Juliana Santacruz Restrepo",
+
+    "subtitle": "Ingeniera de Sistemas | Analítica de Datos | IA | Ciencia de Datos | Desarrollo de Software",
+
+    "description": "Ingeniera de Sistemas con experiencia en desarrollo de soluciones tecnológicas escalables enfocadas en datos, analítica, tecnologías cloud y desarrollo de software.",
+
+    "strategicPhrase": "Transformando datos a gran escala en soluciones inteligentes y escalables.",
+
+     "cv": {
+      "file": "/cv/julianaSantacruzR_hv.pdf",
+      "downloadName": "JulianaSantacruzR_HV.pdf"
+    },
+
+    "highlights": [
+      "17M+ registros procesados.",
+      "TFM calificado 100/100.",
+      "10+ congresos internacionales.",
+      "Ciudadanía Española 🇪🇸."
+    ],
+
+    "buttons": {
+      "projects": "Ver Proyectos",
+      "resume": "Ver Hoja de Vida",
+      "cv": "Descargar CV",
+      "contact": "Contáctame"
+    },
+
+    "social": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    },
+
+    "expertiseTitle": "Áreas de Especialización",
+
+    "expertise": [
+      {
+        "title": "Machine Learning",
+        "description": "Modelado predictivo, clasificación y detección de anomalías."
+      },
+
+      {
+        "title": "Procesamiento Big Data",
+        "description": "Procesamiento distribuido de datos utilizando PySpark y Google Cloud."
+      },
+
+      {
+        "title": "Analítica de Datos",
+        "description": "EDA, visualización de datos y análisis orientado a toma de decisiones."
+      },
+      {
+        "title": "Desarrollo de Software",
+        "description": "Desarrollo de aplicaciones, lógica backend y soluciones tecnológicas escalables."
+      }
+    ]
   },
+
+  "about": {
+    "badge": "Sobre mí",
+
+    "title": "Ingeniera de Sistemas especializada en Datos, IA y Soluciones Tecnológicas Escalables",
+
+    "description": "Soy Ingeniera de Sistemas y Máster en Ciencia de Datos con experiencia en machine learning, analítica avanzada y procesamiento de datos a gran escala.\n\nMi perfil combina desarrollo de software, ingeniería de datos y modelos predictivos para construir soluciones orientadas a problemas reales.\n\nHe trabajado con tecnologías cloud, procesamiento distribuido y detección de anomalías, especialmente en proyectos relacionados con Big Data y ciberseguridad aplicada."
+  },
+
+  "experience": {
+    "badge": "Experiencia",
+
+    "title": "Experiencia Profesional",
+
+    "jobs": [
+      {
+        "role": "Analista de Datos – Data Rookie",
+
+        "company": "Davinci Technologies",
+
+        "period": "2023 — 2024",
+
+        "responsibilities": [
+          "Desarrollo de modelos de machine learning para análisis predictivo y detección de patrones.",
+          "Construcción de pipelines de procesamiento y transformación de datos.",
+          "Análisis exploratorio de datos (EDA) para identificar oportunidades y patrones relevantes.",
+          "Diseño de dashboards e informes para apoyar la toma de decisiones.",
+          "Procesamiento de grandes volúmenes de datos utilizando BigQuery y Google Cloud Platform.",
+          "Colaboración con equipos multidisciplinarios en proyectos orientados a datos."
+        ],
+
+        "technologies": [
+          "Python",
+          "Scikit-learn",
+          "Google Cloud Platform",
+          "BigQuery",
+          "SQL",
+          "Looker Studio"
+        ]
+      },
+
+      {
+        "role": "Desarrolladora de Software – Pasante",
+
+        "company": "JHWEB S.A.S",
+
+        "period": "2023",
+
+        "responsibilities": [
+          "Soporte y desarrollo de soluciones web y backend.",
+          "Administración y consulta de bases de datos relacionales.",
+          "Desarrollo de aplicaciones y prototipos funcionales utilizando FlutterFlow.",
+          "Implementación de funcionalidades orientadas a lógica de negocio y gestión de datos."
+        ],
+
+        "technologies": [
+          "FlutterFlow",
+          "MySQL",
+          "JavaScript",
+          "Node.js"
+        ]
+      }
+    ]
+  },
+
+  "projects": {
+    "badge": "Proyectos",
+
+    "title": "Proyectos Destacados",
+
+    "viewPdf": "Ver PDF",
+
+    "items": [
+      {
+        "title": "Sistema Inteligente de Detección de Ciberataques en Vehículos Conectados",
+
+        "category": "TFM | Big Data & Machine Learning",
+
+        "pdf": "/projects/riesgodeciberataquesenvehiculosconectados.pdf",
+
+        "problem": "Detectar ataques cibernéticos en vehículos conectados mediante análisis masivo de señales CAN Bus.",
+
+        "solution": [
+          "Construcción de pipeline end-to-end para procesamiento y análisis de datos CAN Bus.",
+          "Procesamiento distribuido de más de 17 millones de registros utilizando PySpark.",
+          "Entrenamiento de modelos supervisados y no supervisados para detección de ataques DoS, spoofing y fuzzing.",
+          "Aplicación de feature engineering y técnicas de balanceo de clases.",
+          "Análisis de anomalías y patrones de comportamiento utilizando Machine Learning."
+        ],
+
+        "technologies": [
+          "Python",
+          "PySpark",
+          "Spark MLlib",
+          "Scikit-learn",
+          "XGBoost",
+          "TensorFlow",
+          "Keras",
+          "Google Cloud"
+        ],
+
+        "strategicValue": [
+          "17M+ registros procesados",
+          "Pipeline distribuido con PySpark",
+          "TFM calificado 100/100"
+        ]
+      },
+
+      {
+        "title": "Sistema de apoyo a la toma de decisiones para retorno a la presencialidad",
+
+        "category": "Proyecto de Grado Universitario",
+
+        "problem": "Apoyar la toma de decisiones para el retorno seguro a la presencialidad durante la pandemia del COVID-19.",
+
+        "solution": [
+          "Diseño de sistema basado en criterios de salud y capacidad.",
+          "Modelado de reglas lógicas para evaluación de riesgos.",
+          "Desarrollo de prototipo orientado a escenarios reales."
+        ],
+
+        "technologies": [
+          "FlutterFlow",
+          "Firebase",
+          "Lógica de Decisión"
+        ]
+      }
+    ],
+
+    "labels": {
+      "problem": "Problema",
+      "solution": "Solución",
+      "technologies": "Tecnologías",
+      "strategicValue": "Valor Estratégico"
+      }
+  },
+
+  "skills": {
+    "badge": "Habilidades",
+
+    "title": "Core Technical Stack",
+
+    "categories": {
+      "core": {
+        "title": "Core Stack",
+
+        "items": [
+          "Python",
+          "SQL",
+          "PySpark",
+          "Scikit-learn",
+          "TensorFlow",
+          "BigQuery",
+          "Google Cloud"
+        ]
+      },
+
+      "dataScience": {
+        "title": "Data Science & Machine Learning",
+
+        "items": [
+          "Machine Learning",
+          "Predictive Modeling",
+          "Anomaly Detection",
+          "EDA",
+          "Feature Engineering",
+          "Big Data Processing"
+        ]
+      },
+
+      "cloud": {
+        "title": "Big Data y Cloud",
+
+        "items": [
+          "Google Cloud Platform",
+          "BigQuery",
+          "Apache Spark",
+          "Distributed Data Processing"
+        ]
+      },
+
+      "visualization": {
+        "title": "Visualización de Datos",
+
+        "items": [
+          "Power BI",
+          "Looker Studio",
+          "Plotly",
+          "Tableau"
+        ]
+      },
+
+      "software": {
+        "title": "Desarrollo de Software",
+
+        "items": [
+          "FlutterFlow",
+          "Node.js",
+          "JavaScript",
+          "Git",
+          "GitHub"
+        ]
+      }
+    }
+  },
+
+  "education": {
+    "badge": "Educación",
+
+    "title": "Formación Académica",
+
+    "items": [
+      {
+        "degree": "Máster en Ciencia de Datos",
+
+        "institution": "CEUPE – España",
+
+        "period": "2024 — 2025",
+
+        "focus": [
+          "Machine Learning",
+          "Big Data",
+          "Analítica Predictiva"
+        ],
+
+        "highlightedProject": "Sistema Inteligente de Detección de Ciberataques en Vehículos Conectados.",
+
+        "grade": "TFM calificado 100/100."
+      },
+
+      {
+        "degree": "Ingeniería de Sistemas",
+
+        "institution": "Universidad Mariana – Colombia",
+
+        "period": "2019 — 2023",
+
+        "recognition": "Mención de Honor por Trabajo de Grado Meritorio"
+      }
+    ]
+  },
+
+    "credentials": {
+    "badge": "Credenciales y Reconocimientos",
+
+    "title": "Certificaciones, Investigación y Reconocimientos Académicos",
+
+    "certifications": [
+      "Google Cloud Big Data and Machine Learning Fundamentals.",
+      "Building Batch Data Pipelines on Google Cloud.",
+      "Smart Analytics, Machine Learning and AI on Google Cloud.",
+      "Prompting Responsable aplicado a IA."
+    ],
+
+    "recognitions": [
+      "TFM de Máster calificado con 100/100.",
+      "Mención de Honor por Trabajo de Grado Meritorio.",
+      "Ponente en más de 10 congresos nacionales e internacionales de tecnología."
+    ],
+
+    "labels": {
+      "certifications": "Certificaciones",
+      "recognitions": "Reconocimientos"
+      }
+  },
+  
 
   "contact": {
     "badge": "Contacto",
-    "title": "Construyamos algo increíble"
+
+    "title": "Hablemos de Datos, Ciencia e Innovación",
+
+    "description": "Estoy abierta a nuevas oportunidades, colaboraciones y proyectos.",
+
+    "form": {
+      "name": "Nombre",
+      "email": "Correo",
+      "message": "Mensaje",
+      "sending": "Enviando...",
+      "submit": "Enviar Mensaje"
+    },
+
+    "messages": {
+      "success": "Mensaje enviado correctamente",
+      "error": "Algo salió mal",
+      "requestError": "Error al enviar el mensaje"
+    }
   }
 }

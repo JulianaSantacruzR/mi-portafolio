@@ -1,7 +1,12 @@
-// education-card.tsx
+interface EducationItem {
+  degree: string
+  institution: string
+  period: string
+  description?: string
+}
 
 interface Props {
-  item: any
+  item: EducationItem
 }
 
 export default function EducationCard({
@@ -22,25 +27,25 @@ export default function EducationCard({
       hover:-translate-y-1
       hover:shadow-lg
 
-      dark:border-zinc-800
-      dark:bg-zinc-900/40
+      dark:border-zinc-700
+      dark:bg-[#1a2232]
+      dark:shadow-[0_0_0_1px_rgba(255,255,255,0.05)]
+      dark:hover:bg-[#212c40]
     "
     >
       {/* TOP */}
       <div className="flex flex-wrap items-start justify-between gap-4">
+
         <div>
-          {/* DEGREE */}
           <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">
             {item.degree}
           </h3>
 
-          {/* INSTITUTION */}
-          <p className="mt-2 font-medium text-violet-600 dark:text-violet-400">
+          <p className="mt-2 font-medium text-violet-600 dark:text-violet-300">
             {item.institution}
           </p>
         </div>
 
-        {/* PERIOD */}
         <span
           className="
           rounded-full
@@ -53,17 +58,16 @@ export default function EducationCard({
           font-medium
           text-zinc-700
 
-          dark:border-zinc-700
-          dark:bg-zinc-800/70
-          dark:text-zinc-300
+          dark:border-zinc-600
+          dark:bg-[#2a3548]
+          dark:text-zinc-200
         "
         >
           {item.period}
         </span>
       </div>
 
-      {/* DESCRIPTION */}
-      <p className="mt-6 leading-relaxed text-zinc-600 dark:text-zinc-400">
+      <p className="mt-6 leading-relaxed text-zinc-600 dark:text-zinc-300">
         {item.description}
       </p>
     </div>

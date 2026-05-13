@@ -1,5 +1,3 @@
-// providers.tsx
-
 "use client"
 
 import { ThemeProvider } from "next-themes"
@@ -15,9 +13,7 @@ export default function Providers({
     <ThemeProvider
       attribute="class"
       defaultTheme="light"
-      forcedTheme={undefined}
       enableSystem={false}
-      storageKey="portfolio-theme"
     >
       <Toaster position="top-right" />
 

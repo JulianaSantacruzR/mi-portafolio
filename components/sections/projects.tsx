@@ -1,36 +1,38 @@
-// projects.tsx
-
 import ProjectCard from "../cards/project-card"
+import { Dictionary } from "@/types/dictionary"
 
-import { projects } from "@/lib/data/projects"
+interface Props {
+  dictionary: Dictionary
+}
 
-export default function Projects() {
+export default function Projects({ dictionary }: Props) {
   return (
-    <section
-      id="projects"
-      className="px-6 py-32"
-    >
+    <section id="projects" className="px-6 py-32">
       <div className="mx-auto max-w-7xl">
+
         {/* HEADER */}
         <div className="mb-16">
           <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
-            Portfolio
+            {dictionary.projects.badge}
           </p>
 
           <h2 className="mt-4 text-5xl font-black text-slate-900 dark:text-white">
-            Featured Projects
+            {dictionary.projects.title}
           </h2>
         </div>
 
-        {/* PROJECTS GRID */}
+        {/* GRID */}
         <div className="grid gap-8 lg:grid-cols-2">
-          {projects.map((project) => (
+          {dictionary.projects.items.map((project) => (
             <ProjectCard
               key={project.title}
               project={project}
+              viewPdf={dictionary.projects.viewPdf}
+              labels={dictionary.projects.labels}
             />
           ))}
         </div>
+
       </div>
     </section>
   )

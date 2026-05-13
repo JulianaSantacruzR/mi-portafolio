@@ -1,6 +1,8 @@
 import { getDictionary } from "@/lib/dictionaries"
 
 import Navbar from "@/components/layout/navbar"
+import Footer from "@/components/layout/footer"
+
 import Hero from "@/components/sections/hero"
 import About from "@/components/sections/about"
 import Experience from "@/components/sections/experience"
@@ -8,7 +10,7 @@ import Projects from "@/components/sections/projects"
 import Skills from "@/components/sections/skills"
 import Education from "@/components/sections/education"
 import Contact from "@/components/sections/contact"
-import Footer from "@/components/layout/footer"
+import Achievements from "@/components/sections/achievements"
 
 export default async function Home({
   params,
@@ -17,10 +19,10 @@ export default async function Home({
     lang: "en" | "es"
   }>
 }) {
+
   const { lang } = await params
 
-  const dictionary =
-    await getDictionary(lang)
+  const dictionary = await getDictionary(lang)
 
   return (
     <main className="min-h-screen bg-background text-foreground transition-colors duration-300">
@@ -28,15 +30,17 @@ export default async function Home({
 
       <Hero dictionary={dictionary} />
 
-      <About />
+      <About dictionary={dictionary} />
 
-      <Experience />
+      <Experience dictionary={dictionary} />
 
-      <Projects />
+      <Projects dictionary={dictionary} />
 
-      <Skills />
+      <Skills dictionary={dictionary} />
 
-      <Education />
+      <Education dictionary={dictionary} />
+
+      <Achievements dictionary={dictionary} />
 
       <Contact dictionary={dictionary} />
 

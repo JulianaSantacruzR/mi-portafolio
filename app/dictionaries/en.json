@@ -5,19 +5,354 @@
     "projects": "Projects",
     "skills": "Skills",
     "education": "Education",
-    "contact": "Contact"
+    "certifications": "Certifications",
+    "contact": "Contact",
+    "badge": "Juliana Santacruz R.",
+    "achievements": "Achievements"
   },
 
   "hero": {
-    "badge": "Available for new opportunities",
-    "title": "Building AI & Data Solutions",
-    "subtitle": "Systems Engineer specialized in Data Science, Machine Learning, Big Data and Advanced Analytics.",
-    "projects": "View Projects",
-    "resume": "Download Resume"
+    "badge": "Open to New Opportunities",
+
+    "title": "Juliana Santacruz Restrepo",
+
+    "subtitle": "Systems Engineer | Data Analytics | AI | Data Science | Software Engineering.",
+
+    "description": "Systems Engineer with experience developing scalable technology solutions focused on data, analytics, cloud technologies and software development.",
+
+    "strategicPhrase": "Transforming large-scale data into intelligent and scalable solutions.",
+
+     "cv": {
+      "file": "/cv/julianaSantacruzR_resume.pdf",
+      "downloadName": "JulianaSantacruzR_CV.pdf"
+    },
+
+    "highlights": [
+      "17M+ processed records.",
+      "Master Thesis graded 100/100.",
+      "10+ international conferences.",
+      "Spanish Citizenship 🇪🇸."
+    ],
+
+    "buttons": {
+      "projects": "View Projects",
+      "resume": "View Resume",
+      "cv": "Download CV",
+      "contact": "Contact Me"
+    },
+
+    "social": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    },
+
+    "expertiseTitle": "Areas of Expertise",
+
+    "expertise": [
+      {
+        "title": "Machine Learning",
+        "description": "Predictive modeling, classification and anomaly detection."
+      },
+
+      {
+        "title": "Big Data Processing",
+        "description": "Distributed data processing using PySpark and Google Cloud."
+      },
+
+      {
+        "title": "Data Analytics",
+        "description": "EDA, data visualization and decision-oriented analysis."
+      },
+      {
+        "title": "Software Development",
+        "description": "Application development, backend logic and scalable technology solutions."   
+      }
+    ]
   },
+
+  "about": {
+    "badge": "About Me",
+
+    "title": "Systems Engineer specialized in Data, AI and Scalable Technology Solutions",
+
+    "description": "I am a Systems Engineer and Master's graduate in Data Science with experience in machine learning, advanced analytics and large-scale data processing.\n\nMy profile combines software development, data engineering and predictive modeling to build solutions focused on solving real-world problems.\n\nI have worked with cloud technologies, distributed processing and anomaly detection, especially in projects related to Big Data and applied cybersecurity."
+  },
+
+  "experience": {
+    "badge": "Experience",
+
+    "title": "Professional Experience",
+
+    "jobs": [
+      {
+        "role": "Data Analyst – Data Rookie",
+
+        "company": "Davinci Technologies",
+
+        "period": "2023 — 2024",
+
+        "responsibilities": [
+          "Developed machine learning models for predictive analytics and pattern detection.",
+          "Built data processing and transformation pipelines.",
+          "Performed exploratory data analysis (EDA) to identify business opportunities and relevant patterns.",
+          "Designed dashboards and reports to support decision-making processes.",
+          "Processed large-scale datasets using BigQuery and Google Cloud Platform.",
+          "Collaborated with multidisciplinary teams on data-driven projects."
+        ],
+
+        "technologies": [
+          "Python",
+          "Scikit-learn",
+          "Google Cloud Platform",
+          "BigQuery",
+          "SQL",
+          "Looker Studio"
+        ]
+      },
+
+      {
+        "role": "Software Developer Intern",
+
+        "company": "JHWEB S.A.S",
+
+        "period": "2023",
+
+        "responsibilities": [
+          "Supported and developed web and backend solutions.",
+          "Managed and queried relational databases.",
+          "Developed applications and functional prototypes using FlutterFlow.",
+          "Implemented business logic and data management functionalities."
+        ],
+
+        "technologies": [
+          "FlutterFlow",
+          "MySQL",
+          "JavaScript",
+          "Node.js"
+        ]
+      }
+    ]
+  },
+
+  "projects": {
+    "badge": "Projects",
+
+    "title": "Featured Projects",
+
+    "viewPdf": "View PDF",
+
+    "items": [
+      {
+        "title": "Intelligent Cyberattack Detection System for Connected Vehicles",
+
+        "category": "Master Thesis | Big Data & Machine Learning",
+
+        "pdf": "/projects/riesgodeciberataquesenvehiculosconectados.pdf",
+
+        "problem": "Detect cyberattacks in connected vehicles through large-scale CAN Bus signal analysis.",
+
+        "solution": [
+          "Built an end-to-end pipeline for CAN Bus data processing and analysis.",
+          "Processed more than 17 million records using distributed processing with PySpark.",
+          "Trained supervised and unsupervised models for detecting DoS, spoofing and fuzzing attacks.",
+          "Applied feature engineering and class balancing techniques.",
+          "Performed anomaly detection and behavioral pattern analysis using Machine Learning."
+        ],
+
+        "technologies": [
+          "Python",
+          "PySpark",
+          "Spark MLlib",
+          "Scikit-learn",
+          "XGBoost",
+          "TensorFlow",
+          "Keras",
+          "Google Cloud"
+        ],
+
+        "strategicValue": [
+          "17M+ processed records.",
+          "Distributed pipeline with PySpark.",
+          "Master Thesis graded 100/100."
+        ]
+      },
+
+      {
+        "title": "Decision Support System for Returning to In-Person Activities",
+
+        "category": "Undergraduate Thesis Project",
+
+        "problem": "Support decision-making for a safe return to in-person activities during the COVID-19 pandemic.",
+
+        "solution": [
+          "Designed a system based on health and capacity criteria.",
+          "Modeled logical rules for risk assessment.",
+          "Developed a prototype focused on real-world scenarios."
+        ],
+
+        "technologies": [
+          "FlutterFlow",
+          "Firebase",
+          "Decision Logic"
+        ]
+      }
+    ],
+    
+    "labels": {
+    "problem": "Problem",
+    "solution": "Solution",
+    "technologies": "Technologies",
+    "strategicValue": "Strategic Value"
+}
+  },
+
+  "skills": {
+    "badge": "Skills",
+
+    "title": "Core Technical Stack",
+
+    "categories": {
+      "core": {
+        "title": "Core Stack",
+
+        "items": [
+          "Python",
+          "SQL",
+          "PySpark",
+          "Scikit-learn",
+          "TensorFlow",
+          "BigQuery",
+          "Google Cloud"
+        ]
+      },
+
+      "dataScience": {
+        "title": "Data Science & Machine Learning",
+
+        "items": [
+          "Machine Learning",
+          "Predictive Modeling",
+          "Anomaly Detection",
+          "EDA",
+          "Feature Engineering",
+          "Big Data Processing"
+        ]
+      },
+
+      "cloud": {
+        "title": "Big Data & Cloud",
+
+        "items": [
+          "Google Cloud Platform",
+          "BigQuery",
+          "Apache Spark",
+          "Distributed Data Processing"
+        ]
+      },
+
+      "visualization": {
+        "title": "Data Visualization",
+
+        "items": [
+          "Power BI",
+          "Looker Studio",
+          "Plotly",
+          "Tableau"
+        ]
+      },
+
+      "software": {
+        "title": "Software Development",
+
+        "items": [
+          "FlutterFlow",
+          "Node.js",
+          "JavaScript",
+          "Git",
+          "GitHub"
+        ]
+      }
+    }
+  },
+
+  "education": {
+    "badge": "Education",
+
+    "title": "Academic Background",
+
+    "items": [
+      {
+        "degree": "Master's Degree in Data Science",
+
+        "institution": "CEUPE – Spain",
+
+        "period": "2024 — 2025",
+
+        "focus": [
+          "Machine Learning",
+          "Big Data",
+          "Predictive Analytics"
+        ],
+
+        "highlightedProject": "Intelligent Cyberattack Detection System for Connected Vehicles.",
+
+        "grade": "Master Thesis graded 100/100."
+      },
+
+      {
+        "degree": "Systems Engineering",
+
+        "institution": "Universidad Mariana – Colombia",
+
+        "period": "2019 — 2023",
+
+        "recognition": "Honor Mention for Outstanding Undergraduate Thesis."
+      }
+    ]
+  },
+
+  "credentials": {
+  "badge": "Credentials & Recognition",
+  "title": "Certifications, Research and Academic Recognition",
+
+  "certifications": [
+    "Google Cloud Big Data and Machine Learning Fundamentals.",
+    "Building Batch Data Pipelines on Google Cloud.",
+    "Smart Analytics, Machine Learning and AI on Google Cloud.",
+    "Responsible Prompting Applied to AI."
+  ],
+
+  "recognitions": [
+    "Master Thesis graded 100/100.",
+    "Honor Mention for Outstanding Undergraduate Thesis.",
+    "Speaker at 10+ national and international technology conferences"
+  ],
+
+  "labels": {
+      "certifications": "Certifications",
+      "recognitions": "Recognitions"
+      }
+},
 
   "contact": {
     "badge": "Contact",
-    "title": "Let’s Build Something Amazing"
+
+    "title": "Let's Talk About Data and Innovation",
+
+    "description": "I am open to new opportunities, collaborations and technology-driven projects.",
+
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "sending": "Sending...",
+      "submit": "Send Message"
+    },
+
+    "messages": {
+      "success": "Message sent successfully",
+      "error": "Something went wrong",
+      "requestError": "Error sending the message"
+    }
   }
 }
