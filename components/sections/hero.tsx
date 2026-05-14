@@ -71,14 +71,30 @@ export default function Hero({ dictionary }: Props) {
 
             {/* SOCIAL */}
             <div className="mt-10 flex gap-6 text-slate-600 dark:text-zinc-300">
-              <FaGithub className="text-2xl" />
-              <FaLinkedin className="text-2xl" />
+              
+              <a
+                href="https://github.com/JulianaSantacruzR?tab=repositories"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:scale-110 hover:text-black dark:hover:text-white"
+              >
+                <FaGithub className="text-2xl" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/juliana-santacruz-restrepo-13060a196/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:scale-110 hover:text-blue-600"
+              >
+                <FaLinkedin className="text-2xl" />
+              </a>
+
             </div>
 
           </div>
 
           {/* RIGHT */}
-          {/* SOLO moví este cuadro hacia la derecha */}
           <div className="ml-10 rounded-3xl border border-zinc-200 bg-[#f3f4f6] p-8 lg:p-10 shadow-[0_10px_30px_rgba(15,23,42,0.06)] dark:border-zinc-700 dark:bg-[#1a2232]">
 
             <p className="text-sm uppercase tracking-[0.3em] text-zinc-500 dark:text-zinc-400">
